@@ -1,0 +1,25 @@
+{
+  "name": "cbx-front",
+  "version": "1.0.0",
+  "description": "This is a space where we will gather all our files before we connect the frontend to backend. We will be using JavaScript in the React/Node.js framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anajbdbl/CBX-Front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anajbdbl/CBX-Front/issues"
+  },
+  "homepage": "https://github.com/anajbdbl/CBX-Front#readme",
+  "dependencies": {
+    "@apollo/server": "^4.9.5",
+    "graphql-tag": "^2.12.6",
+    "mongoose": "^7.6.3"
+  }
+}
