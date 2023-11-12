@@ -1,0 +1,24 @@
+.logo-cloud {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    animation: scroll 30s linear infinite;
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin: 10px;
+    /* Randomize size within a range, you can adjust as needed */
+    width: calc(50px + 5vw);
+    height: auto;
+}
+
+/* Keyframes for horizontal scrolling */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
