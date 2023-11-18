@@ -1,5 +1,5 @@
 import styles from './style'
-import { Navbar } from './components'
+import { Navbar, Transition_h } from './components'
 
 const App = () => {
   return (
@@ -7,6 +7,12 @@ const App = () => {
       <div className={`${styles.paddingX} ${styles.flexCenter}`}> 
         <div className={`${styles.boxWidth}`}>
           <Navbar />
+        </div>
+      </div>
+
+      <div className={`bg-black w-screen h-screen text-white`}> 
+        <div className={`w-full h-full flex flex-row justify-center items-center`}>
+          <Transition_h />
         </div>
       </div>
     </div>
