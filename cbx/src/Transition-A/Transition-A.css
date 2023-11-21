@@ -1,0 +1,28 @@
+.transitionA {
+    -webkit-animation: transitionA;
+    animation: transitionA;
+    transform: translateY(-50%);
+    opacity: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s
+}
+
+@-webkit-keyframes transitionA {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes transitionA {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+    }
+}
