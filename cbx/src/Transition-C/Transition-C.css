@@ -1,0 +1,62 @@
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeInSlow {
+    0% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeInSlow {
+    0% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation: fadeIn;
+    animation: fadeIn;
+    opacity: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s
+}
+
+.fadeInSlow {
+    -webkit-animation: fadeInSlow;
+    animation: fadeInSlow;
+    opacity: 1;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
+.message {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
