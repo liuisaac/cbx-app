@@ -1,0 +1,63 @@
+/* CompanyList.css */
+.company-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .company-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+  }
+  
+  .company-item {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .company-item-content {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .logo-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+  }
+  
+  /* CompanyDetail.css */
+  .company-details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .company-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .logo-container {
+    flex: 0 0 50%;
+    padding-right: 20px;
+  }
+  
+  .details {
+    flex: 1;
+  }
+  
+  .logo-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
