@@ -1,0 +1,43 @@
+@keyframes moveHorizontally {
+    from {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        transform: translate3d(-1200px, 0px, 0px); /* This value should match the total distance you want to move */
+    }
+}
+
+body {
+    background-color: black;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex; /* Use flex display for a single row of items */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    animation: moveHorizontally 16s linear infinite;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    grid-auto-rows: 150px;
+    justify-items: center;
+    align-content: start;
+}
+
+.colour-placeholder {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    border-radius: 20px;
+    transform: rotate(-45deg);
+}
+
+.wrapper .colour-placeholder:nth-of-type(2n) {
+    transform: translateY(125px) rotate(-45deg); /* Adjust Y translation for the correct overlap */
+}
+
+.wrapper .colour-placeholder:nth-of-type(2n+1){
+    transform: translateY(50px) rotate(-45deg); /* Adjust Y translation for the correct overlap */
+}
