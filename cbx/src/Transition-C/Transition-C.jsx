@@ -9,7 +9,7 @@ function TransitionC() {
     { name: "TBC", title: "title", href: "", img_src: placeholder },
   ];
   return (
-    <div class="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto">
+    <div class="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
       <div class="text-left w-full">
         <h1 class="ml-4 text-4xl font-bold">Our Team</h1>
       </div>

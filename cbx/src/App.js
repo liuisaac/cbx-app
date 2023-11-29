@@ -4,7 +4,7 @@ import TransitionC from'./Transition-C/Transition-C.jsx';
 
 function App() {
   return (
-    <div>
+    <div class="bg-black">
       <TransitionC/>
       <div className="App">
         <header className="App-header">
