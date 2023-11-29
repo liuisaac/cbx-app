@@ -1,7 +1,7 @@
 .paragraph span {
     color: grey;
     transition: color 0.3s ease;
-    display: block; /* or inline-block, depending on your layout */
+    display: block; 
 }
 
 .paragraph span.active {

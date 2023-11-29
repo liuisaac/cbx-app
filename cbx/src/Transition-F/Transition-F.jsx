@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './YourComponent.css'; // Import the CSS file
+import './Transition-F.css'; // Import the CSS file
 
-const YourComponent = () => {
+const TransitionF = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            // Adjust these values based on your layout and how you want the transition to happen
+            // Need to adjust these values
             const scrollPosition = window.scrollY;
             const newIndex = Math.min(Math.floor(scrollPosition / 100), 4);
             setActiveIndex(newIndex);
@@ -28,4 +28,4 @@ const YourComponent = () => {
     );
 };
 
-export default YourComponent;
+export default TransitionF;

@@ -1,6 +1,8 @@
 import React from 'react';
-import './LogoCloud.css';
-// Import logos
+import './Transition-G.css';
+// Import logos - <easier way to do this>
+// const logos = Array.from({ length: 7 }, (_, i) => require(`./assets/logo${i + 1}.png`));
+// thus we would get an array which we can iterate through
 import logo1 from './assets/logo1.png';
 import logo2 from './assets/logo2.png';
 import logo3 from './assets/logo3.png';
@@ -12,7 +14,7 @@ import logo7 from './assets/logo7.png';
 // ... import other logos
 // ... text reader description are set as placeholders for now
 
-const LogoCloud = () => {
+const TransitionG = () => {
     return (
         <div className="logo-cloud">
             <img src={logo1} alt="Logo 1" className="logo" />
@@ -26,4 +28,4 @@ const LogoCloud = () => {
     );
 };
 
-export default LogoCloud;
+export default TransitionG;

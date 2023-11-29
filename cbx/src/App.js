@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import TransitionC from'./Transition-C/Transition-C.jsx';
+import TransitionF from'./Transition-F/Transition-F.jsx';
+import TransitionG from'./Transition-G/Transition-G.jsx';
 
 function App() {
   return (
     <div>
       <TransitionC/>
+      <TransitionF/>
+      <TransitionG/>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
