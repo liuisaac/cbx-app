@@ -5,7 +5,7 @@ import TransitionC from'./Transition-C/Transition-C.jsx';
 
 function App() {
   return (
-    <div>
+    <div class="bg-black">
       <TransitionA/>
       <TransitionC/>
       <div className="App">
