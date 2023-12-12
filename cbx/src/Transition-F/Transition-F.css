@@ -1,0 +1,23 @@
+.text-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    font-size: 50px; 
+    color: #848282; 
+    line-height: 1.5; 
+    max-width: 50%;
+    margin: 0 auto; 
+    background-color: black;
+    word-wrap: break-word;
+    overflow-x: auto;
+
+  }
+  
+  .text-line {
+    opacity: 0.5; /* Dim non-highlighted lines */
+    transition: opacity 0.3s ease, color 0.3s ease;
+    display: inline;
+  }
+  
+  .highlight {
+    color: white; 
+    opacity: 1; 
+  }
