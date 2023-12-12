@@ -1,12 +1,32 @@
-.slash {
+@property --a{
+    syntax: '<percentage>'; /* its type */
+    inherits: false;
+    initial-value: 10%; /* the initial value */
+}
+
+.transitionASlash {
+    --a: 50%;
     position: absolute;
     height: 5px;
-    width: 350px;
-    background-color: #B5DEF6;
+    width: 400px;
+    /*background-color: #B5DEF6;*/
+    background: radial-gradient(#B5DEF6 var(--a), transparent 0);
     transform: rotate(-45deg);
-    
-    z-index: 10;
-  }
+
+    transition:--a 0.1s 0s;
+    animation: transitionASlash;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+@keyframes transitionASlash {
+    from {
+        --a: 10%;
+    }
+    to {
+        --a: 50%;
+    }
+}
 
 /* CBX */
 
