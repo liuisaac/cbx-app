@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import TransitionA from'./Transition-A/Transition-A.jsx';
 import TransitionC from'./Transition-C/Transition-C.jsx';
-import TransitionF from'./Transition-F/Transition-F.jsx';
+import TransitionF from'./Transition-F/Transition-F.tsx';
 import TransitionG from'./Transition-G/Transition-G.jsx';
 
 function App() {
@@ -14,9 +14,9 @@ function App() {
   return (
     <div class="bg-black">
       <TransitionA/>
-      <TransitionC/>
+      {/*<TransitionC/>
       <TransitionF text={transitionFText}/>
-      <TransitionG/>
+      <TransitionG/>*/}
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
