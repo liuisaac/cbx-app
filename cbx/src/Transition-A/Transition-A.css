@@ -1,26 +1,69 @@
-.transitionA {
-    -webkit-animation: transitionA;
-    animation: transitionA;
-    transform: translateY(-0%);
+.slash {
+    position: absolute;
+    height: 5px;
+    width: 350px;
+    background-color: #B5DEF6;
+    transform: rotate(-45deg);
+    
+    z-index: 10;
+  }
+
+/* CBX */
+
+.transitionACbx {
+    -webkit-animation: transitionACbx;
+    animation: transitionACbx;
+    transform: translate(0%, -70%);
     opacity: 1;
     -webkit-animation-duration: 2s;
     animation-duration: 2s
 }
 
-@-webkit-keyframes transitionA {
+@-webkit-keyframes transitionACbx {
     from {
         opacity: 0;
-        transform: translateY(100%);
+        transform: translate(100%, -150%);
     }
     to {
         opacity: 1;
     }
 }
 
-@keyframes transitionA {
+@keyframes transitionACbx {
     from {
         opacity: 0;
-        transform: translateY(100%);
+        transform: translate(5%, -100%);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Partners */
+
+.transitionAPartners {
+    -webkit-animation: transitionAPartners;
+    animation: transitionAPartners;
+    transform: translate(0, 70%);
+    opacity: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s
+}
+
+@-webkit-keyframes transitionAPartners {
+    from {
+        opacity: 0;
+        transform: translate(-5%, 150%);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes transitionAPartners {
+    from {
+        opacity: 0;
+        transform: translate(-5%, 150%);
     }
     to {
         opacity: 1;
