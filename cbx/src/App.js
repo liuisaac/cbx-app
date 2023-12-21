@@ -1,6 +1,5 @@
 import logo from "./logo.svg";
 import "./App.css";
-import TransitionA from "./Transition-A/Transition-A.jsx";
 import TransitionB from "./Transition-B/Transition-B.jsx";
 import TransitionC from "./Transition-C/Transition-C.jsx";
 import TransitionF from "./Transition-F/Transition-F.tsx";
@@ -15,7 +14,6 @@ function App() {
   return (
     <div>
       <TransitionB />
-      <TransitionA />
       <TransitionC />
       <TransitionF text={transitionFText} />
       <TransitionG />
