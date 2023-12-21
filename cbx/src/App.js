@@ -1,8 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import TransitionC from'./Transition-C/Transition-C.jsx';
-import TransitionF from'./Transition-F/Transition-F.jsx';
-import TransitionG from'./Transition-G/Transition-G.jsx';
+import logo from "./logo.svg";
+import "./App.css";
+import TransitionA from "./Transition-A/Transition-A.jsx";
+import TransitionB from "./Transition-B/Transition-B.jsx";
+import TransitionC from "./Transition-C/Transition-C.jsx";
+import TransitionF from "./Transition-F/Transition-F.tsx";
+import TransitionG from "./Transition-G/Transition-G.jsx";
 
 function App() {
   const transitionFText = [
@@ -12,25 +14,11 @@ function App() {
   ];
   return (
     <div>
-      <TransitionC/>
-      <TransitionF text={transitionFText}/>
-      <TransitionG/>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <TransitionB />
+      <TransitionA />
+      <TransitionC />
+      <TransitionF text={transitionFText} />
+      <TransitionG />
     </div>
   );
 }
