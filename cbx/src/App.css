@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: black; /* Equivalent to bg-black */
+  font-family: 'Neue Montreal Book', Helvetica, sans-serif; /* Assuming 'Neue Montreal Book' is correctly defined in your @font-face */
 }
 
 .App-logo {
