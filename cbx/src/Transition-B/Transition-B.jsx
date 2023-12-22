@@ -12,7 +12,7 @@ const TransitionB = () => {
   }, []);  
   return (
     <nav className="w-full flex my-3 justify-between items-center navbar">
-      <div className={`mt-8 flex justify-start font-neue_montreal_book px-4 transition duration-[2000ms] ${transition ? `opacity-100 translate-y-0` : `opacity-0 translate-y-10`} transition ease-in-out`}>
+      <div className={`mt-8 flex justify-start font-neue_montreal_thin px-4 transition duration-[2000ms] ${transition ? `opacity-100 translate-y-0` : `opacity-0 translate-y-10`} transition ease-in-out`}>
             <a href="https://www.cbxcapitalpartners.com/"> <img className='object-contain h-16 ml-5' src={ logo } alt='CBX Partners Logo'/> </a>
         </div>
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
