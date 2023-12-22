@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PartnerFirms from './pages/Partner-Firms' //formerly transition F
-import TransitionC from'./Transition-C/Transition-C.jsx';
+import Alumni from'./pages/Alumni'; //formerly transition C
 import TransitionG from'./Transition-G/Transition-G.jsx';
 import PartnerFirms from './pages/Partner-Firms.js';
 
@@ -14,6 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/Partner-Firms" element={<PartnerFirms />} />
+          <Route path="/Alumni" element={<Alumni />} />
         </Routes>
       </BrowserRouter>
 
