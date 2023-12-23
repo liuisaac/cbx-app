@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { logo } from './assets';
 import { navLinks } from './constants/navconsts';
+import { Link } from 'react-router-dom';
 
 
-const TransitionB = () => {
+const NavBar = () => {
   const [transition, setTransition] = useState(false)
   useEffect(() => { 
     const timeout = setTimeout(() => { 
@@ -19,9 +20,9 @@ const TransitionB = () => {
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {navLinks.map((nav, index) =>
             (<li key={nav.id} className={`font-poppins px-4 transition ${transition ? `opacity-100 translate-y-0` : `opacity-0 translate-y-7`} transition duration-1000 ease-in-out`} style={{transitionDelay : `${String(166*index)}ms`}}>
-                <a className={`text-white`} href={`/${nav.id}`}>
+                <Link className={`text-white`} to={`/${nav.id}`}>
                     {nav.title} 
-                </a>
+                </Link>
             </li>))}
         </ul>
     </nav>
@@ -29,4 +30,4 @@ const TransitionB = () => {
 }
 
 
-export default TransitionB
+export default NavBar
