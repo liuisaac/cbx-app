@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import TransitionC from'./Transition-C/Transition-C.jsx';
-import TransitionF from'./Transition-F/Transition-F.jsx';
+import TransitionF from'./Transition-F/Transition-F.tsx';
 import TransitionG from'./Transition-G/Transition-G.jsx';
 
 function App() {
