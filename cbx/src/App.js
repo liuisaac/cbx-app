@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import logo from "./logo.svg";
 import "./App.css";
 import TransitionB from "./Transition-B/Transition-B.jsx";
@@ -5,16 +6,33 @@ import TransitionC from "./Transition-C/Transition-C.jsx";
 import TransitionF from "./Transition-F/Transition-F.tsx";
 import TransitionG from "./Transition-G/Transition-G.jsx";
 import Companies from './Transition-D&E/Companies.jsx';
+=======
+import logo from './logo.svg';
+import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import PartnerFirms from './pages/Partner-Firms' //formerly transition F
+import Alumni from'./pages/Alumni'; //formerly transition C
+import TransitionG from'./Transition-G/Transition-G.jsx';
+import PartnerFirms from './pages/Partner-Firms.js';
+>>>>>>> alumni_page
 
 function App() {
-  const transitionFText = [
-    "We are partnered with XX firms with XX millions in AUM filler text. ",
-    "Second line of the paragraph asdfa sdfadsfad sfad sfasdfa dsfadsfadsfa daf a. ",
-    "Third line of the paragraphasdfasfa dsfasfaafsdf",
-  ];
+
   return (
     <div>
+      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/Partner-Firms" element={<PartnerFirms />} />
+          <Route path="/Alumni" element={<Alumni />} />
+        </Routes>
+      </BrowserRouter>
+
       <TransitionC/>
+<<<<<<< HEAD
+=======
+      <TransitionG/>
+>>>>>>> alumni_page
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
