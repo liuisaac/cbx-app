@@ -8,7 +8,6 @@ import { Route, Routes } from "react-router-dom";
 import Companies from './Transition-D&E/Companies.jsx';
 
 import './App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PartnerFirms from './pages/Partner-Firms' //formerly transition F
 import Alumni from'./pages/Alumni'; //formerly transition C
 
