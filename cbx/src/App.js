@@ -22,10 +22,7 @@ function App() {
   ];
   return (
     <div class="bg-black">
-      <TransitionA/>
-      {/*<TransitionC/>
-      <TransitionF text={transitionFText}/>
-      <TransitionG/>*/}
+      <TransitionC/>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
