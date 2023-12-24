@@ -1,4 +1,4 @@
-import "./Transition-C.css";
+import "../../dist/output.css";
 import placeholder from "./256px-Man_Silhouette2.jpg";
 
 function TransitionC() {
