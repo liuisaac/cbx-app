@@ -17,6 +17,7 @@ function App() {
       <TransitionC />
       <TransitionF text={transitionFText} />
       <TransitionG />
+      <Recruitment/>
     </div>
   );
 }
