@@ -21,33 +21,12 @@ function App() {
     "Third line of the paragraphasdfasfa dsfasfaafsdf",
   ];
   return (
-<<<<<<< HEAD
-    <div class="bg-black">
-      <TransitionC/>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-=======
     <div>
       <TransitionB />
       <TransitionC />
       <TransitionF text={transitionFText} />
       <TransitionG />
       <Recruitment/>
->>>>>>> 7d79d329a99ce15c4405509c9483c7a1621280d7
     </div>
   );
 }

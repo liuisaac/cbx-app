@@ -13,15 +13,9 @@ const NavBar = () => {
     return () => clearTimeout(timeout); 
   }, []);  
   return (
-<<<<<<< HEAD
-    <nav className="w-full flex my-3 justify-between items-center navbar">
-      <div className={`mt-8 flex justify-start font-poppins px-4 transition duration-[2000ms] ${transition ? `opacity-100 translate-y-0` : `opacity-0 translate-y-10`} transition ease-in-out`}>
-            <a href="/"> <img className='object-contain h-16 ml-5' src={ logo } alt='CBX Partners Logo'/> </a>
-=======
     <nav className="w-full flex my-3 justify-between items-center navbar fixed z-1000">
       <div className={`mt-8 flex justify-start font-neue_montreal_thin px-4 transition duration-[2000ms] ${transition ? `opacity-100 translate-y-0` : `opacity-0 translate-y-10`} transition ease-in-out`}>
             <a href="https://www.cbxcapitalpartners.com/"> <img className='object-contain h-16 ml-5' src={ logo } alt='CBX Partners Logo'/> </a>
->>>>>>> 7d79d329a99ce15c4405509c9483c7a1621280d7
         </div>
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {navLinks.map((nav, index) =>

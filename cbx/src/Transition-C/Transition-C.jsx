@@ -11,11 +11,7 @@ function TransitionC() {
   return (
     <div class="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
       <div class="text-left w-full">
-<<<<<<< HEAD
-        <h1 class="ml-4 text-4xl font-bold fadeInSlow">Our Team</h1>
-=======
         <h1 class="ml-4 text-4xl font-bold text-white">Our Team</h1>
->>>>>>> 7d79d329a99ce15c4405509c9483c7a1621280d7
       </div>
       <br />
       <div class="flex flex-wrap m-4">
