@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import './Transition-G.css'; // Make sure your CSS file is correctly linked
 
 const TransitionG = () => {

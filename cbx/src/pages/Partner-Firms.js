@@ -1,4 +1,4 @@
-import TransitionF from'../Transition-F/Transition-F.jsx';
+import TransitionF from'../Transition-F/Transition-F.tsx';
 
 export default function(){
     const transitionFText = [

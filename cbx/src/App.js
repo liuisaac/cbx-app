@@ -1,17 +1,22 @@
 import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./Transition-B/Transition-B.jsx";
+import TransitionA from "./Transition-A/Transition-A.jsx";
+import TransitionB from "./Transition-B/Transition-B.jsx"
 import TransitionC from "./Transition-C/Transition-C.jsx";
+import TransitionD from "./Transition-D&E/Transition-D.jsx"
+import TransitionH from "./Transition-H/TransitionH.jsx"
+
 import TransitionF from "./Transition-F/Transition-F.tsx";
 import TransitionG from "./Transition-G/Transition-G.jsx";
-import { Route, Routes } from "react-router-dom";
-import Companies from './Transition-D&E/Companies.jsx';
-
+// import { Route, Routes } from "react-router-dom";
+// import Companies from './Transition-D&E/Transition-D.jsx';
+import NavBar from "./Navbar.jsx";
 import './App.css';
-import PartnerFirms from './pages/Partner-Firms' //formerly transition F
-import Alumni from'./pages/Alumni'; //formerly transition C
+// import PartnerFirms from './pages/Partner-Firms' //formerly transition F
+// import Alumni from'./pages/Alumni'; //formerly transition C
+import styles from "./style.js";
 
-import TransitionA from'./Transition-A/Transition-A.jsx';
+
 
 
 function App() {
@@ -21,8 +26,29 @@ function App() {
     "Third line of the paragraphasdfasfa dsfasfaafsdf",
   ];
   return (
-    <div class="bg-black">
+    <div className="bg-black">
+      <h3>{transitionFText}</h3>
+      <TransitionA/>
+      <TransitionB/>
       <TransitionC/>
+      <TransitionD/>
+      <TransitionG/>
+      <TransitionF/>
+      
+
+      <div className="bg-black w-full h-screen overflow-hidden">
+      <div className={`${styles.paddingX} ${styles.flexCenter}`}> 
+        <div className={`${styles.boxWidth}`}>
+         <NavBar/>
+        </div>
+      </div>
+
+      <div className={`bg-black w-screen h-screen text-white`}> 
+        <div className={`w-full h-full flex flex-row justify-center items-center`}>
+        <TransitionH/>
+        </div>
+      </div>
+    </div>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
