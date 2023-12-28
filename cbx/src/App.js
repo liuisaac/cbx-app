@@ -21,6 +21,7 @@ function App() {
     "Third line of the paragraphasdfasfa dsfasfaafsdf",
   ];
   return (
+<<<<<<< HEAD
     <div class="bg-black">
       <TransitionC/>
       <div className="App">
@@ -39,6 +40,14 @@ function App() {
           </a>
         </header>
       </div>
+=======
+    <div>
+      <TransitionB />
+      <TransitionC />
+      <TransitionF text={transitionFText} />
+      <TransitionG />
+      <Recruitment/>
+>>>>>>> 7d79d329a99ce15c4405509c9483c7a1621280d7
     </div>
   );
 }
