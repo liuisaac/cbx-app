@@ -1,29 +1,125 @@
-import { useEffect } from "react";
-// import { Canvas, useLoader } from "@react-three/fiber";
-import {Canvas, useLoader} from "@react-three/fiber"
+import React, { useEffect, useMemo, useRef } from "react";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useMousePosition } from "./useMousePosition";
-import { PerspectiveCamera } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import * as THREE from "three";
 
 const TransitionH = () => {
-    const gltf = useLoader(GLTFLoader, "./thelion.glb");
-    // const cam_left_rot = 10;
-    // const cam_up_rot = -3;
+    const [Init, setInit] = useState(false);
 
-    const position = useMousePosition();
-    const [transition, setTransition] = useState(false)
-    useEffect(() => { 
-      const timeout = setTimeout(() => { 
-        setTransition(true); 
-      }, 1000);
-      return () => clearTimeout(timeout); 
-    }, []);  
+    const Rig = () => {
+        const refCamera = useRef();
+        let zoomConstant = 1.5;
+
+        useFrame((state) => {
+            if (state.camera) {
+                if (Init) {
+                    state.camera.position.y = THREE.MathUtils.damp(
+                        state.camera.position.y, //rotation
+                        -50, //target point
+                        2.0, //jerkiness
+                        0.01 //change in time
+                    );
+
+                    state.camera.position.z = THREE.MathUtils.damp(
+                        state.camera.position.z, //rotation
+                        200 * zoomConstant, //target point
+                        2.0, //jerkiness
+                        0.01 //change in time
+                    );
+
+                    state.camera.position.x = THREE.MathUtils.damp(
+                        state.camera.position.x, //rotation
+                        -310 * zoomConstant, //target point
+                        2.0, //jerkiness
+                        0.01 //change in time
+                    );
+                }
+
+                state.camera.lookAt(0, 0, 0);
+            }
+        });
+
+        return (
+            <PerspectiveCamera
+                makeDefault
+                position={[-3180 * 0.5, 800, 2000 * 0.5]}
+                near={1}
+                fov={20}
+                far={4000}
+                zoom={1.2}
+                ref={refCamera}
+            />
+        );
+    };
+
+    const Obj = () => {
+        const refMesh = useRef();
+        const gltf = useLoader(GLTFLoader, "./thelion.glb");
+
+        useFrame(({ state }) => {
+            if (refMesh.current && Init) {
+                // rotating the object
+                refMesh.current.rotation.y = THREE.MathUtils.damp(
+                    refMesh.current.rotation.y, //rotation
+                    -(Math.PI * 2), //target point
+                    2.5, //jerkiness
+                    0.01 //change in time
+                );
+            }
+        });
+
+        return (
+            <group
+                position={[0, -375, 0]}
+                rotation={[0, -Math.PI, 0]}
+                ref={refMesh}
+            >
+                <primitive object={gltf.scene} />
+            </group>
+        );
+    };
+
+    // const position = useMousePosition();
+    const [transition, setTransition] = useState(false);
+    // useEffect(() => {
+    //     const timeout = setTimeout(() => {
+    //         setTransition(true);
+    //     }, 3000);
+    //     return () => clearTimeout(timeout);
+    // }, []);
+
+    function W (){
+        const refMesh = useRef();
+        const store = useRef();
+        console.log("hi");
+        // setTrigger(true);
+        // const timeout = setTimeout(() => {
+        //     setTransition(true);
+        // }, 1000);
+        if (refMesh.current) {
+            store.targetObj = refMesh.current;
+        }
+        // return () => clearTimeout(timeout);
+    }
 
     return (
-        <div className="w-full h-full relative">
+        <div
+            className="w-full h-full relative"
+            onClick={() => {setInit(true)
+            W();
+            }}
+        >
             <div className="absolute w-full h-full flex flex-col justify-center items-center z-50">
-                <div className={`w-[50vh] bg-black rounded-[2rem] bg-opacity-40 backdrop-blur border-2 border-gray-700 flex flex-col items-center transition duration-1000 ease-in-out ${transition ? `opacity-100 translate-y-0` : `opacity-0 translate-y-7`}`}>
+                <div
+                    className={`w-[50vh] bg-black rounded-[2rem] bg-opacity-40 backdrop-blur border-2 border-gray-700 flex flex-col items-center transition duration-1000 ease-in-out ${
+                        transition
+                            ? `opacity-100 translate-y-0`
+                            : `opacity-0 translate-y-7`
+                    }`}
+                >
                     <div className=" w-full h-12 bg-gray-300 rounded-t-[2rem] bg-opacity-20  backdrop-blur flex flex-row justify-center items-center font-light text-2xl tracking-widest">
                         SIGN IN
                     </div>
@@ -70,19 +166,23 @@ const TransitionH = () => {
                     </button>
 
                     <span className="font-semibold tracking-wide mb-8 mt-4 italic text-black">
-                        Forgot <span className="underline cursor-pointer">Username / Password?</span>
+                        Forgot{" "}
+                        <span className="underline cursor-pointer">
+                            Username / Password?
+                        </span>
                     </span>
                 </div>
             </div>
             <Canvas>
-                <PerspectiveCamera
-                    makeDefault
-                    position={[-3180, -50, 2000]}
-                    fov={3}
-                    rotation={[0.2, -1, 0.1]}
-                    near={1000}
-                    far={10000}
-                />
+                {/* camera={{
+            position: [(-100 * cam_left_rot), 600, (position.x)],
+            fov: 10,
+            rotation: [(-0.02 * cam_up_rot), (-0.1 * cam_left_rot), (-0.02 * cam_up_rot)],
+            far: 10000
+        }} */}
+                {/* <fog attach="fog" args={['lightpink', 60, 100]} /> */}
+                <Rig />
+                {/* <fog attach="fog" color="hotpink" near={1} far={10} /> */}
                 <directionalLight
                     color="white"
                     position={[200, -100, -500]}
@@ -94,12 +194,12 @@ const TransitionH = () => {
                     intensity={3}
                 />
                 <ambientLight />
-                <group
-                    position={[0, 0, 0]}
-                    rotation={[0, ((0.1 * 1) / 2000) * position.x - 0.1, 0]}
-                >
-                    <primitive object={gltf.scene} />
-                </group>
+
+                {/* <EffectComposer>
+            <Bloom mipmapBlur luminanceThreshold={5} />
+        </EffectComposer> */}
+
+                <Obj />
             </Canvas>
             <div>CBX</div>
         </div>

@@ -3,17 +3,17 @@ import "./App.css";
 import TransitionA from "./Transition-A/Transition-A.jsx";
 import TransitionB from "./Transition-B/Transition-B.jsx"
 import TransitionC from "./Transition-C/Transition-C.jsx";
-import TransitionD from "./Transition-D&E/Transition-D.jsx"
-import TransitionH from "./Transition-H/TransitionH.jsx"
 
+import TransitionH from "./Transition-H/TransitionH.jsx"
+import TransitionD from "./Transition-D&E/TransitionD.jsx"
 import TransitionF from "./Transition-F/Transition-F.tsx";
 import TransitionG from "./Transition-G/Transition-G.jsx";
-// import { Route, Routes } from "react-router-dom";
-// import Companies from './Transition-D&E/Transition-D.jsx';
+import { Route, Routes } from "react-router-dom";
+import Companies from './Transition-D&E/TransitionD.jsx';
 import NavBar from "./Navbar.jsx";
 import './App.css';
-// import PartnerFirms from './pages/Partner-Firms' //formerly transition F
-// import Alumni from'./pages/Alumni'; //formerly transition C
+import PartnerFirms from './pages/Partner-Firms.js' //formerly transition F
+import Alumni from'./pages/Alumni.js'; //formerly transition C
 import styles from "./style.js";
 
 
@@ -32,9 +32,10 @@ function App() {
       <TransitionB/>
       <TransitionC/>
       <TransitionD/>
-      <TransitionG/>
       <TransitionF/>
-      
+      <TransitionG/>
+    
+     
 
       <div className="bg-black w-full h-screen overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}> 
@@ -47,9 +48,10 @@ function App() {
         <div className={`w-full h-full flex flex-row justify-center items-center`}>
         <TransitionH/>
         </div>
+        <TransitionD/>
       </div>
     </div>
-      <div className="App">
+      {/* <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -64,7 +66,7 @@ function App() {
             Learn React
           </a>
         </header>
-      </div>
+      </div> */}
     </div>
   );
 }
