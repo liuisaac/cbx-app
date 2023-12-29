@@ -91,26 +91,25 @@ const TransitionH = () => {
     //     return () => clearTimeout(timeout);
     // }, []);
 
-    function W (){
+    const W = () => {
         const refMesh = useRef();
         const store = useRef();
         console.log("hi");
-        // setTrigger(true);
-        // const timeout = setTimeout(() => {
-        //     setTransition(true);
-        // }, 1000);
-        if (refMesh.current) {
-            store.targetObj = refMesh.current;
-        }
-        // return () => clearTimeout(timeout);
-    }
+
+        // Set the reference when the refMesh exists
+        useEffect(() => {
+            if (refMesh.current) {
+                store.current.targetObj = refMesh.current;
+            }
+        }, []);}
 
     return (
         <div
-            className="w-full h-full relative"
-            onClick={() => {setInit(true)
-            W();
-            }}
+        className="w-full h-full relative"
+        onClick={() => {
+            setInit(true);
+           
+        }}
         >
             <div className="absolute w-full h-full flex flex-col justify-center items-center z-50">
                 <div
