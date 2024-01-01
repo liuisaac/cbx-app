@@ -111,7 +111,9 @@ const TransitionH = () => {
            
         }}
         >
-            <div className="absolute w-full h-full flex flex-col justify-center items-center z-50">
+            {/* <div className="absolute w-full h-full flex flex-col justify-center items-center z-50"
+        
+            >
                 <div
                     className={`w-[50vh] bg-black rounded-[2rem] bg-opacity-40 backdrop-blur border-2 border-gray-700 flex flex-col items-center transition duration-1000 ease-in-out ${
                         transition
@@ -171,8 +173,10 @@ const TransitionH = () => {
                         </span>
                     </span>
                 </div>
-            </div>
+            </div> */}
+           
             <Canvas>
+                
                 {/* camera={{
             position: [(-100 * cam_left_rot), 600, (position.x)],
             fov: 10,
@@ -200,6 +204,8 @@ const TransitionH = () => {
 
                 <Obj />
             </Canvas>
+            
+            
             <div>CBX</div>
         </div>
     );

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-
+import CompanyDetail from './CompanyDetail';
 
 // class Companies extends Component {
 //   constructor(props) {
@@ -90,9 +90,12 @@ function Companies (){
         <h2>Companies</h2>
         <div className="image-grid">
           {data.map((dat) => (
-            <div className="logo-container" key={data._id}>
-             <img  src={dat.logo} className="logo-image" />
-            </div>
+            // <div className="logo-container" key={data._id}>
+            //  <img  src={dat.logo} className="logo-image" />
+            // </div>
+            <CompanyDetail
+            dat={dat}
+            />
           ))}
         </div>
       </div>
