@@ -1,13 +1,29 @@
-// import "../../dist/output.css";
 import placeholder from "./256px-Man_Silhouette2.jpg";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
 function TransitionC() {
-  var members = [
-    { key:0, name: "David", title: "title", href: "", img_src: placeholder },
-    { key:1, name: "Marvin", title: "title", href: "", img_src: placeholder },
-    { key:2, name: "Andy", title: "title", href: "", img_src: placeholder },
-    { key:3, name: "TBC", title: "title", href: "", img_src: placeholder },
-  ];
+  const [members, setMembers] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/team/members")
+      .then(response => {
+        setMembers(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching team members:", error);
+      });
+  }, []); // runs once when component mounts
+
+  const loadImage = (path) => {
+    try {
+      const image = require(`./../assets/teamPhotos/${path}`);
+      return image;
+    } catch (error) {
+      console.error(`Error loading image: ${path}`, error);
+      return placeholder; // or return another default image or handle the error accordingly
+    }
+  };
+
   return (
     <div className="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
       <div className="text-left w-full">
@@ -21,13 +37,13 @@ function TransitionC() {
               <a href={member.href} className="opacity-0 fadeInSlow">
                 <img
                   className="shadow rounded-sm object-cover h-48 aspect-[35/45] align-middle border-none"
-                  src={member.img_src}
-                  alt={member.name}
+                  src={loadImage(member.pictureFile)}
+                  alt={`${member.firstName} ${member.lastName}`}
                 />
               </a>
               <div className="p-4 text-center font-normal fadeIn">
                 <p>
-                  <b className="text-xl">{member.name}</b>
+                  <b className="text-xl">{`${member.firstName} ${member.lastName}`}</b>
                   <br />
                   <span>{member.title}</span>
                 </p>
