@@ -111,7 +111,7 @@ const TransitionH = () => {
            
         }}
         >
-            {/* <div className="absolute w-full h-full flex flex-col justify-center items-center z-50"
+            <div className="absolute w-full h-full flex flex-col justify-center items-center z-50"
         
             >
                 <div
@@ -173,7 +173,7 @@ const TransitionH = () => {
                         </span>
                     </span>
                 </div>
-            </div> */}
+            </div>
            
             <Canvas>
                 
