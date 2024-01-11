@@ -20,9 +20,9 @@ const NavBar = () => {
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {navLinks.map((nav, index) =>
             (<li key={nav.id} className={`font-poppins px-4 transition ${transition ? `opacity-100 translate-y-0` : `opacity-0 translate-y-7`} transition duration-1000 ease-in-out`} style={{transitionDelay : `${String(166*index)}ms`}}>
-                <Link className={`text-white`} to={`/${nav.id}`}>
+                <a href={`/${nav.title}`} className={`text-white`} to={`/${nav.id}`}>
                     {nav.title} 
-                </Link>
+                </a>
             </li>))}
         </ul>
     </nav>

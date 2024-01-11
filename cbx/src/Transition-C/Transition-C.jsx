@@ -1,6 +1,7 @@
 import placeholder from "./256px-Man_Silhouette2.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import NavBar from "../Transition-B/Transition-B";
 function TransitionC() {
   const [members, setMembers] = useState([]);
 
@@ -25,6 +26,8 @@ function TransitionC() {
   };
 
   return (
+    <div>
+      <NavBar/>
     <div className="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
       <div className="text-left w-full">
         <h1 className="ml-4 text-4xl font-bold fadeInSlow">Our Team</h1>
@@ -52,6 +55,7 @@ function TransitionC() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

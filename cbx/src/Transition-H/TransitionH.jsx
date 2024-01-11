@@ -5,7 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useMousePosition } from "./useMousePosition";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
-
+import NavBar from "../Transition-B/Transition-B";
 const TransitionH = () => {
     const [Init, setInit] = useState(false);
 
@@ -61,6 +61,7 @@ const TransitionH = () => {
 
         useFrame(({ state }) => {
             if (refMesh.current && Init) {
+                // refMesh.current.scale.set(2,2,2)
                 // rotating the object
                 refMesh.current.rotation.y = THREE.MathUtils.damp(
                     refMesh.current.rotation.y, //rotation
@@ -111,7 +112,7 @@ const TransitionH = () => {
            
         }}
         >
-            <div className="absolute w-full h-full flex flex-col justify-center items-center z-50"
+            {/* <div className="absolute w-full h-full flex flex-col justify-center items-center z-50"
         
             >
                 <div
@@ -174,39 +175,22 @@ const TransitionH = () => {
                     </span>
                 </div>
             </div>
+            */}
            
-            <Canvas>
-                
-                {/* camera={{
-            position: [(-100 * cam_left_rot), 600, (position.x)],
-            fov: 10,
-            rotation: [(-0.02 * cam_up_rot), (-0.1 * cam_left_rot), (-0.02 * cam_up_rot)],
-            far: 10000
-        }} */}
-                {/* <fog attach="fog" args={['lightpink', 60, 100]} /> */}
+           <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
+           <NavBar/>
+            <Canvas style={{ position: "absolute", top: 0, left: 0 }}>
                 <Rig />
-                {/* <fog attach="fog" color="hotpink" near={1} far={10} /> */}
-                <directionalLight
-                    color="white"
-                    position={[200, -100, -500]}
-                    intensity={3}
-                />
-                <directionalLight
-                    color="white"
-                    position={[-30, 100, 30]}
-                    intensity={3}
-                />
+                <directionalLight color="white" position={[200, -100, -500]} intensity={3} />
+                <directionalLight color="white" position={[-30, 100, 30]} intensity={3} />
                 <ambientLight />
-
-                {/* <EffectComposer>
-            <Bloom mipmapBlur luminanceThreshold={5} />
-        </EffectComposer> */}
-
                 <Obj />
             </Canvas>
+            {/* <div style={{ position: "absolute", bottom: 10, right: 10, color: "white" }}>CBX</div> */}
+        </div>
             
             
-            <div>CBX</div>
+            
         </div>
     );
 };

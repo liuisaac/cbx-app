@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Transition-F.css";
+import NavBar from "../Transition-B/Transition-B";
 
 interface TextProps {
   text?: string[]; // Making text prop optional with `?`
@@ -33,6 +34,8 @@ const TransitionF = ({ text = [] }: TextProps) => {
   }, [text]);
 
   return (
+    <div>
+      <NavBar/>
     <div ref={containerRef} className="text-container">
       {text.map((line, index) => (
         <p
@@ -44,6 +47,7 @@ const TransitionF = ({ text = [] }: TextProps) => {
           {line}
         </p>
       ))}
+    </div>
     </div>
   );
 };

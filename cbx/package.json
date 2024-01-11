@@ -15,11 +15,11 @@
     "multer": "^1.4.5-lts.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "tailwind": "^4.0.0",
     "three": "^0.160.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-0.9.1.tgz"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,6 +46,8 @@
     ]
   },
   "devDependencies": {
+    "@types/webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-types-0.9.1.tgz",
+    "react-router-dom": "^6.21.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   }

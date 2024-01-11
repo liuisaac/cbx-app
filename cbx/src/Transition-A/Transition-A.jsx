@@ -3,17 +3,20 @@ import "./Transition-A.css";
 import logoCbx from './CBX_white_cbx.png';
 import logoPartners from './CBX_white_partners.png';
 import background from "./Home_Page_Background.jpg";
+import NavBar from "../Transition-B/Transition-B";
 
 function TransitionA() {
   return (
-    <div style={{ 
+    <div><NavBar/>
+    <div id="home" style={{ 
       backgroundImage: `url(${background})`,
       backgroundRepeat: 'no-repeat', 
       backgroundPosition: 'center',
       backgroundSize: 'cover',
-      
+    
     }} className="bg-black">
-      <div className="md:w-5/6 lg:w-4/6 px-5 py-24 m-auto h-screen flex">
+      
+      <div  className="md:w-5/6 lg:w-4/6 px-5 py-24 m-auto h-screen flex">
         <div className="m-auto transitionACbx flex justify-center"  alt="logo">
             <img src={logoCbx} className="inline p-0 h-24  object-scale-down" alt="logo" />
         </div>
@@ -24,6 +27,7 @@ function TransitionA() {
             <img src={logoPartners} className="inline p-0 h-24 object-scale-down" alt="logo" />
         </div>
       </div>
+    </div>
     </div>
   );
 }

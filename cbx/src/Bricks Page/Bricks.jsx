@@ -1,110 +1,163 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import * as THREE from "three";
-import { TweenMax, Power4 } from 'gsap';
+import NavBar from "../Transition-B/Transition-B";
+import React, {
+    useRef,
+    useState,
+    useCallback,
+    forwardRef,
+    useImperativeHandle,
+    useEffect,
+} from "react";
+import {
+    ViewerApp,
+    AssetManagerPlugin,
+    GBufferPlugin,
+    ProgressivePlugin,
+    TonemapPlugin,
+    SSRPlugin,
+    SSAOPlugin,
+    BloomPlugin,
+    GammaCorrectionPlugin,
+} from "webgi";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { scrollAnimation } from "../scroll.animation";
 
-const BrickAnimation = ({ isAnimating }) => {
-  const refMesh = useRef();
-  const gltf = useLoader(GLTFLoader, "./brick.glb");
+gsap.registerPlugin(ScrollTrigger);
 
-  useFrame(({ camera }) => {
-    if (refMesh.current && isAnimating) {
-      refMesh.current.rotation.y += 0.01;
+const Bricks = forwardRef((props, ref) => {
+    const canvasRef = useRef(null);
+    const [viewerRef, setViewerRef] = useState(null);
+    const [targetRef, setTargetRef] = useState(null);
+    const [cameraRef, setCameraRef] = useState(null);
+    const [positionRef, setPositionRef] = useState(null);
+    const canvasContainerRef = useRef(null);
 
-      
-      if (isAnimating) {
-        camera.position.y += 0.1; 
-      } else {
-        camera.position.y -= 0.1; 
-      }
-    }
-  });
+    useImperativeHandle(ref, () => ({
+        triggerPreview() {
+            canvasContainerRef.current.style.pointerEvents = "all";
+            props.contentRef.current.style.opacity = "0";
+            gsap.to(positionRef, {
+                x: 10.583887969,
+                y: 0.2639599244,
+                z: 0.0083473267,
+                duration: 5,
+                onUpdate: () => {
+                    viewerRef.setDirty();
+                    cameraRef.positionTargetUpdated(true);
+                },
+            });
+            gsap.to(targetRef, {
+                x: 10.583887969,
+                y: 0.2639599244,
+                z: 0.0083473267,
+                duration: 5,
+            });
 
-  return (
-    <group position={[0, 0, 0]} ref={refMesh}>
-      <primitive object={gltf.scene} />
-    </group>
-  );
-};
+            viewerRef.scene.activeCamera.setCameraOptions({ controlsEnabled: true });
+        },
+    }));
 
-const BricksTransition = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
-  const containerRef = useRef(null);
-  const bricksRef = useRef([]);
+    const memoizedScrollAnimation = useCallback(
+        (position, target, onUpdate) => {
+            if (position && target && onUpdate) {
+                scrollAnimation(position, target, onUpdate);
+            }
+        },
+        []
+    );
 
-  useEffect(() => {
-    let scene;
-    const handleScroll = (event) => {
-      if (!isAnimating) {
-        setIsAnimating(true);
-        const bricks = event.deltaY > 0 ? bricksRef.current : bricksRef.current.slice().reverse();
-        bricks.forEach((brick, index) => {
-          TweenMax.to(brick.position, 1, { y: event.deltaY > 0 ? 0 : -10 * (index + 1), ease: Power4.easeInOut });
+    const setupViewer = useCallback(async () => {
+        const viewer = new ViewerApp({
+            canvas: canvasRef.current,
         });
-      }
-    };
 
-    const init = () => {
-      scene = new THREE.Scene();
+        setViewerRef(viewer);
 
- 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Ambient light
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5); // Directional light
-      directionalLight.position.set(0, 10, 0); // Position the light
-      scene.add(ambientLight, directionalLight);
+        const manager = await viewer.addPlugin(AssetManagerPlugin);
 
-   
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 5; // Play with this value to change the camera's initial distance from the scene
+        const camera = viewer.scene.activeCamera;
+        const position = camera.position;
+        const target = camera.target;
 
-     
-      for (let i = 0; i < 25; i++) {
-        const brick = new THREE.Mesh(
-          new THREE.BoxGeometry(1, 1, 1),
-          new THREE.MeshBasicMaterial({ color: 0xffffff, emissive: 0xffffff })
-        );
-        brick.position.set(
-          (i % 5 - 2) * 1.5,
-          Math.floor(i / 5 - 2) * 1.5,
-          -10 + Math.random() * 10
-        );
-        bricksRef.current.push(brick);
-        scene.add(brick);
-      }
+        setCameraRef(camera);
+        setPositionRef(position);
+        setTargetRef(target);
 
-      window.addEventListener('wheel', handleScroll);
+        await viewer.addPlugin(GBufferPlugin);
+        await viewer.addPlugin(new ProgressivePlugin(32));
+        await viewer.addPlugin(new TonemapPlugin(true));
+        await viewer.addPlugin(GammaCorrectionPlugin);
+        await viewer.addPlugin(BloomPlugin);
+        await viewer.addPlugin(SSRPlugin);
+        await viewer.addPlugin(SSAOPlugin);
 
-      return () => {
-        window.removeEventListener('wheel', handleScroll);
-      };
-    };
+        viewer.renderer.refreshPipeline();
 
-    init();
-  }, []);
+        await manager.addFromPath("./brick.glb");
 
-  return (
-    <div
-      ref={containerRef}
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        width: '100vw',
-        height: '100vh',
-        position: 'relative',
-      }}
-    >
-      <div style={{ flex: 1 }}>
-        {/* Your left content */}
-      </div>
-      <div style={{ flex: 1 }}>
-        <Canvas>
-          {/* Placeholders */}
-          <BrickAnimation isAnimating={isAnimating} />
-        </Canvas>
-      </div>
-    </div>
-  );
-};
+        viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
 
-export default BricksTransition;
+        viewer.scene.activeCamera.setCameraOptions({ controlsEnabled: false });
+
+        window.scrollTo(0, 0);
+
+        let needsUpdate = true;
+
+        const onUpdate = () => {
+            needsUpdate = true;
+            viewer.setDirty();
+        };
+
+        viewer.addEventListener("preFrame", () => {
+            if (needsUpdate) {
+                camera.positionTargetUpdated(true);
+                needsUpdate = false;
+            }
+        });
+
+        memoizedScrollAnimation(position, target, onUpdate);
+    }, []);
+
+    useEffect(() => {
+        setupViewer();
+    }, [setupViewer]);
+
+    return (
+        <div id="brick" style={{ width: "100vw", height: "100vh", position: "relative" }}>
+            <NavBar />
+            <div style={{ display: "flex" }}>
+                <div style={{ flex: 1 }}>
+                    <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
+                        <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
+                    </div>
+                </div>
+                <div style={{ flex: 1, color: "white", padding: "0 20px" }}>
+                    <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "3rem" }}>
+                        Built from the ground up to be different
+                    </h1>
+                    <p style={{
+                        fontSize: "0.9rem",
+                        lineHeight: "1.5",
+                        textAlign: "left",
+                    }}>
+                        CBX Partners' ethos is two-fold: deliver industry-leading returns for its investors and provide select Columbia undergraduates
+                        with the investing intuition and competitive edge needed to dominate careers at the world’s leading investment and strategic advisory firms.
+                        <br /><br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                        id est laborum.
+
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    );
+});
+
+export default Bricks;

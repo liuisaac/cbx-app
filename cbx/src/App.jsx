@@ -3,7 +3,7 @@ import "./App.css";
 import TransitionA from "./Transition-A/Transition-A.jsx";
 import TransitionB from "./Transition-B/Transition-B.jsx"
 import TransitionC from "./Transition-C/Transition-C.jsx";
-import RecruitmentForm from "./Recruitment Page/Recruitment.jsx";
+
 import TransitionH from "./Transition-H/TransitionH.jsx"
 import TransitionD from "./Transition-D&E/TransitionD.jsx"
 import TransitionF from "./Transition-F/Transition-F.tsx";
@@ -11,7 +11,7 @@ import TransitionG from "./Transition-G/Transition-G.jsx";
 import Metrics from "./Metrics Page/Metrics.jsx";
 import Bricks from "./Bricks Page/Bricks.jsx";
 import { Route, Routes,Router } from "react-router-dom";
-
+import RecruitmentForm from "./Recruitment Page/RecruitForm.jsx";
 import Companies from './Transition-D&E/TransitionD.jsx';
 import NavBar from "./Navbar.jsx";
 import './App.css';
@@ -19,57 +19,68 @@ import PartnerFirms from './pages/Partner-Firms.js' //formerly transition F
 import Alumni from'./pages/Alumni.js'; //formerly transition C
 import styles from "./style.js";
 import ShowCompanies from "./Transition-D&E/ShowCompany.jsx";
-
-
+import Recruitment from "./Recruitment Page/Recruitment.jsx";
+import LoginForm from "./Login/LoginForm.jsx";
 
 function App() {
-  const pathname = window.location.pathname;
-
-  // Function to render components based on pathname
-  const renderComponent = () => {
-    switch (pathname) {
-      case '/':
-        return (
-          <div className="bg-black">
-              <TransitionA/>
-              <Metrics/>
-              <Bricks/>
-              <RecruitmentForm/>
-              <TransitionH/>
-           
-          </div>
-        );
-      case '/about':
-        return <TransitionB />;
-      // ... add cases for other routes
-      case '/team':
-        return <TransitionC />;
-      // ... add cases for other routes
-      case '/portfolio':
-        return <TransitionD />;
-      // ... add cases for other routes
-      case '/partners':
-        return <TransitionF />&& <TransitionG/>;
-      // ... add cases for other routes
-      case '/alumni':
-        return <TransitionC/>;
-      // ... add cases for other routes
-      default:
-        return <div>Page not found</div>;
-    }
-  };
-
   return (
-    <div className="App">
-      {/* Navbar or other common components */}
-      <TransitionB/>
-      {/* For example, NavBar component */}
-      {/* <NavBar /> */}
+    <div>
+     
+    <div className="bg-black">
+      <Routes>
+        <Route path="/" element={<>
+          {/* Render components for the '/' route */}
+          <TransitionA />
+          <Metrics />
+          <Bricks />
+          <Recruitment />
+          <TransitionH />
+        </>} />
 
-      {/* Render components based on pathname */}
-      {renderComponent()}
+        <Route path="/About" element={<>
+          <Alumni/>
+        </>} />
+
+        <Route path="/Team" element={<>
+          <TransitionC />
+        </>} />
+
+        <Route path="/Portfolio" element={<>
+        
+          <TransitionD />
+        </>} />
+
+        <Route path="/Partners" element={<>
+      
+          
+          <TransitionF />
+          <TransitionG />
+        </>} />
+
+        <Route path="/Alumni" element={<>
+  
+          <TransitionC />
+        </>} />
+
+        <Route path="/Recruiting" element={<>
+          
+          <RecruitmentForm />
+        </>} />
+
+        <Route path="/Login" element={<>
+          
+          <LoginForm />
+        </>} />
+
+        <Route path="/company/:name" element={<>
+         
+          <ShowCompanies />
+        </>} />
+      </Routes>
+    </div>
     </div>
   );
+  
 }
 
 export default App;
