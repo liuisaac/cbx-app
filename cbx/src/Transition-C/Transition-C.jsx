@@ -1,33 +1,44 @@
-import "../../dist/output.css";
 import placeholder from "./256px-Man_Silhouette2.jpg";
-
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Helmet } from "react-helmet";
+import NavBar from "../Transition-B/Transition-B";
 function TransitionC() {
-  var members = [
-    { name: "David", title: "title", href: "", img_src: placeholder },
-    { name: "Marvin", title: "title", href: "", img_src: placeholder },
-    { name: "Andy", title: "title", href: "", img_src: placeholder },
-    { name: "TBC", title: "title", href: "", img_src: placeholder },
-  ];
+  const [members, setMembers] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/team/members")
+      .then(response => {
+        setMembers(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching team members:", error);
+      });
+  }, []); // runs once when component mounts
+
   return (
     <div class="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
       <div class="text-left w-full">
-        <h1 class="ml-4 text-4xl font-bold text-white">Our Team</h1>
+        <h1 class="ml-4 text-4xl font-bold fadeInSlow">Our Team</h1>
       </div>
       <br />
-      <div class="flex flex-wrap m-4">
+      <div className="flex flex-wrap m-4">
         {members.map((member) => (
-          <div class="p-4 lg:w-1/4 md:w-1/2">
-            <div class="h-full flex flex-col items-center text-center">
+          <div key={member.key} className="p-4 lg:w-1/4 md:w-1/2">
+            <div className="h-full flex flex-col items-center text-center">
               <a href={member.href} className="opacity-0 fadeInSlow">
                 <img
-                  class="shadow rounded-sm object-cover h-48 aspect-[35/45] align-middle border-none"
-                  src={member.img_src}
-                  alt={member.name}
+                  className="shadow rounded-sm object-cover h-48 aspect-[35/45] align-middle border-none"
+                  src={member.pictureFile}
+                  alt={`${member.firstName} ${member.lastName}`}
+                  onError={(e) => {
+                    e.target.src = placeholder; // display placeholder image if pictureFile not found
+                  }}
                 />
               </a>
-              <div class="p-4 text-center font-normal fadeIn">
+              <div className="p-4 text-center font-normal fadeIn">
                 <p>
-                  <b class="text-xl text-white">{member.name}</b>
+                  <b class="text-xl">{member.name}</b>
                   <br />
                   <span class="text-white">{member.title}</span>
                 </p>
@@ -37,6 +48,7 @@ function TransitionC() {
         ))}
       </div>
     </div>
+    
   );
 }
 

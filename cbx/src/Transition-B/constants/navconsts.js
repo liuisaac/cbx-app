@@ -13,7 +13,7 @@ export const navLinks = [
   },
   {
     id: "partner-firms",
-    title: "Partner Firms",
+    title: "Partners",
   },
   {
     id: "alumni",
@@ -25,6 +25,6 @@ export const navLinks = [
   },
   {
     id: "lp-login",
-    title: "LP Login",
+    title: "Login",
   },
 ];

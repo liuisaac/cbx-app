@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Transition-F.css";
+import NavBar from "../Transition-B/Transition-B";
 
 interface TextProps {
-  text: string[];
+  text?: string[]; // Making text prop optional with `?`
 }
 
-const TransitionF = ({ text }: TextProps) => {
+const TransitionF = ({ text = [] }: TextProps) => {
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const calculateHighlight = () => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || text.length === 0) return; // Check if text is empty or undefined
 
     const targetPosition = window.innerHeight / 2; // Middle of the viewport
     const lines = containerRef.current.children;
@@ -33,6 +34,8 @@ const TransitionF = ({ text }: TextProps) => {
   }, [text]);
 
   return (
+    <div>
+      <NavBar/>
     <div ref={containerRef} className="text-container">
       {text.map((line, index) => (
         <p
@@ -44,6 +47,7 @@ const TransitionF = ({ text }: TextProps) => {
           {line}
         </p>
       ))}
+    </div>
     </div>
   );
 };
