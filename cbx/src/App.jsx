@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import TransitionA from "./Transition-A/Transition-A.jsx";
-import TransitionB from "./Transition-B/Transition-B.jsx"
+
 import TransitionC from "./Transition-C/Transition-C.jsx";
 import LoginPage from "./AdminPages/loginpage.jsx";
 import TransitionH from "./Transition-H/TransitionH.jsx"
@@ -19,7 +19,7 @@ import PartnerFirms from './pages/Partner-Firms.js' //formerly transition F
 import Alumni from'./pages/Alumni.js'; //formerly transition C
 import styles from "./style.js";
 import ShowCompanies from "./Transition-D&E/ShowCompany.jsx";
-import Recruitment from "./Recruitment Page/Recruitment.jsx";
+import Recruitment from "./Recruitment Page/Recruitment.jsx"
 import LoginForm from "./Login/LoginForm.jsx";
 
 function App() {

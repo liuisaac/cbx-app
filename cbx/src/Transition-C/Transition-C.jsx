@@ -17,9 +17,12 @@ function TransitionC() {
   }, []); // runs once when component mounts
 
   return (
-    <div class="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
-      <div class="text-left w-full">
-        <h1 class="ml-4 text-4xl font-bold fadeInSlow">Our Team</h1>
+    <div>
+      <NavBar/>
+    
+    <div className="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
+      <div className="text-left w-full">
+        <h1 className="ml-4 text-4xl font-bold fadeInSlow">Our Team</h1>
       </div>
       <br />
       <div className="flex flex-wrap m-4">
@@ -38,9 +41,9 @@ function TransitionC() {
               </a>
               <div className="p-4 text-center font-normal fadeIn">
                 <p>
-                  <b class="text-xl">{member.name}</b>
+                  <b className="text-xl">{member.name}</b>
                   <br />
-                  <span class="text-white">{member.title}</span>
+                  <span className="text-white">{member.title}</span>
                 </p>
               </div>
             </div>
@@ -48,7 +51,7 @@ function TransitionC() {
         ))}
       </div>
     </div>
-    
+    </div>
   );
 }
 
