@@ -1,6 +1,7 @@
 import placeholder from "./256px-Man_Silhouette2.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 import NavBar from "../Transition-B/Transition-B";
 function TransitionC() {
   const [members, setMembers] = useState([]);
@@ -15,20 +16,15 @@ function TransitionC() {
       });
   }, []); // runs once when component mounts
 
-  const loadImage = (path) => {
-    try {
-      const image = require(`./../assets/teamPhotos/${path}`);
-      return image;
-    } catch (error) {
-      console.error(`Error loading image: ${path}`, error);
-      return placeholder; // or return another default image or handle the error accordingly
-    }
-  };
-
   return (
     <div>
       <NavBar/>
+   
     <div className="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
+      
+      <Helmet>
+        <title>CBX Partners | Team</title>
+      </Helmet>
       <div className="text-left w-full">
         <h1 className="ml-4 text-4xl font-bold fadeInSlow">Our Team</h1>
       </div>
@@ -40,8 +36,11 @@ function TransitionC() {
               <a href={member.href} className="opacity-0 fadeInSlow">
                 <img
                   className="shadow rounded-sm object-cover h-48 aspect-[35/45] align-middle border-none"
-                  src={loadImage(member.pictureFile)}
+                  src={member.pictureFile}
                   alt={`${member.firstName} ${member.lastName}`}
+                  onError={(e) => {
+                    e.target.src = placeholder; // display placeholder image if pictureFile not found
+                  }}
                 />
               </a>
               <div className="p-4 text-center font-normal fadeIn">

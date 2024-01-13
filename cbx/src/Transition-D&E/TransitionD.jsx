@@ -139,13 +139,16 @@ function Companies() {
       </div>
 
       <div className="image-grid">
-        {data.map((firm) => (
+        {firms.map((firm) => (
           <div
             className="logo-container"
-            key={firm.name}
+            key={firm.title}
             
           >
-           <div  onClick={() => handleLogoClick(`/company/${firm.name}`)}><img src={firm.logo} alt={firm.name} className="logo-image" /></div> 
+          
+           <CompanyDetail
+           props= {firm}
+           />
           </div>
         ))}
       </div>

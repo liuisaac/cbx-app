@@ -3,7 +3,7 @@ import "./App.css";
 import TransitionA from "./Transition-A/Transition-A.jsx";
 import TransitionB from "./Transition-B/Transition-B.jsx"
 import TransitionC from "./Transition-C/Transition-C.jsx";
-
+import LoginPage from "./AdminPages/loginpage.jsx";
 import TransitionH from "./Transition-H/TransitionH.jsx"
 import TransitionD from "./Transition-D&E/TransitionD.jsx"
 import TransitionF from "./Transition-F/Transition-F.tsx";
@@ -66,10 +66,14 @@ function App() {
           
           <RecruitmentForm />
         </>} />
+        <Route path="/applicationForm" element={<>
+          
+          <RecruitmentForm />
+        </>} />
 
         <Route path="/Login" element={<>
           
-          <LoginForm />
+          <LoginPage />
         </>} />
 
         <Route path="/company/:name" element={<>

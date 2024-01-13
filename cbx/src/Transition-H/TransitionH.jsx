@@ -176,9 +176,9 @@ const TransitionH = () => {
                 </div>
             </div>
             */}
-           
+            <NavBar/>
            <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
-           <NavBar/>
+          
             <Canvas style={{ position: "absolute", top: 0, left: 0 }}>
                 <Rig />
                 <directionalLight color="white" position={[200, -100, -500]} intensity={3} />

@@ -62,29 +62,26 @@ function ShowCompanies() {
   ];
 
   const [firms, setFirms] = useState([]);
-  let id = useParams();
+  let { name } = useParams();
+
   const [currentFirm, setCurrentFirm] = useState([]);
-  console.log("this is id-->"+id.name);
+ 
   useEffect(() => {
     axios.get("http://localhost:5000/firms")
       .then(response => {
         setFirms(response.data);
-        for (let each of firms) {
-          if (firms.title == id) {
-            setCurrentFirm(each)
-          }
-        }
-        for (let item of data){
-          if (item.name==id.name){
-            setCurrentFirm(item);
-          }
+        const foundFirm = response.data.find(firm => firm.name === name);
+  
+        if (foundFirm) {
+          setCurrentFirm(foundFirm);
         }
       })
       .catch(error => {
         console.error("Error fetching firm info:", error);
       });
-  }, []);
-
+  }, [name]);
+  
+console.log("this is current form-->"+currentFirm);
  
   return (
     <div>
@@ -92,15 +89,15 @@ function ShowCompanies() {
     <div className="company-details-container">
       <div className="company-details">
         <div className="logo-containerss">
-          <img src={currentFirm.logo} alt="Company Logo" className="logo-image" />
+          <img src={currentFirm.logofile} alt="Company Logo" className="logo-image" />
         </div>
         <div className="details">
-          <p className="intro">{currentFirm.intro}</p>
-          <p className="bio">{currentFirm.bio}</p>
-          <p>Status: {currentFirm.status}</p>
-          <p>Sector: {currentFirm.sector}</p>
-          <p>Investment Year: {firms.investmentYear}</p>
-          <p>Region: {currentFirm.region}</p>
+          <p className="intro">{currentFirm.name}</p>
+          <p className="bio">{currentFirm.description}</p>
+          <p>Status: {currentFirm.categories}</p>
+          <p>Sector: {currentFirm.status}</p>
+          <p>Investment Year: {currentFirm.investmentYear}</p>
+          <p>Region: {currentFirm.location}</p>
         </div>
       </div>
     </div>
