@@ -3,6 +3,10 @@
     display: flex;
     align-items: center;
   }
+
+  .radio-text {
+    color: white
+  }
   
 
   .action-button {

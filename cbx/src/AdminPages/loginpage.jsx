@@ -31,6 +31,8 @@ const LoginPage = () => {
             if (data.success) {
                 setLoggedIn(true);
                 setAttemptedLogin(false);
+                setEmail('');
+                setPassword('');
 
                 const newAccessToken = data.accessToken;
                 setAccessToken(newAccessToken);

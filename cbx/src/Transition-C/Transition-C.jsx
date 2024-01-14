@@ -41,7 +41,7 @@ function TransitionC() {
               </a>
               <div className="p-4 text-center font-normal fadeIn">
                 <p>
-                  <b className="text-xl">{member.name}</b>
+                  <b className="text-xl">{`${member.firstName} ${member.lastName}`}</b>
                   <br />
                   <span className="text-white">{member.title}</span>
                 </p>

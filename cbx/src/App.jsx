@@ -3,6 +3,7 @@ import "./App.css";
 import TransitionA from "./Transition-A/Transition-A.jsx";
 
 import TransitionC from "./Transition-C/Transition-C.jsx";
+import TransitionCAlumni from "./Transition-C/Transition-C Alumni.jsx";
 import LoginPage from "./AdminPages/loginpage.jsx";
 import TransitionH from "./Transition-H/TransitionH.jsx"
 import TransitionD from "./Transition-D&E/TransitionD.jsx"
@@ -59,7 +60,7 @@ function App() {
 
         <Route path="/Alumni" element={<>
   
-          <TransitionC />
+          <TransitionCAlumni/>
         </>} />
 
         <Route path="/Recruiting" element={<>

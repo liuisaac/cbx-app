@@ -64,7 +64,7 @@ const HomePage = ({ firms, users, toggleFirmForm, onDeleteFirm, onUpdateFirmFlag
           {firms.map((firm, index) => (
             <div key={index} className="radio-item">
               <input type="radio" id={`radio-${index}`} name="firm" value={firm.name} onChange={() => handleFirmSelection(firm)} />
-              <label htmlFor={`radio-${index}`}>{firm.name}</label>
+              <label htmlFor={`radio-${index}`} className="radio-text">{firm.name}</label>
             </div>
           ))}
           <button onClick={toggleFirmForm} className="action-button" >Add Firm</button>
@@ -78,7 +78,7 @@ const HomePage = ({ firms, users, toggleFirmForm, onDeleteFirm, onUpdateFirmFlag
           {users.map((user, index) => (
             <div key={index} className="radio-item">
               <input type="radio" id={`radio-${index}`} name="user" value={user.name} onChange={() => handleUserSelection(user)} />
-              <label htmlFor={`radio-${index}`}>{`${user.firstName} ${user.lastName}`}</label>
+              <label htmlFor={`radio-${index}`} className="radio-text">{`${user.firstName} ${user.lastName}`}</label>
             </div>
           ))}
           <button onClick={toggleUserForm} className="action-button" > Add User</button>
