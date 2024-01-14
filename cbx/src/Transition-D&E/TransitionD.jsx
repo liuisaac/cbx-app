@@ -32,82 +32,57 @@ import NavBar from '../Transition-B/Transition-B';
 //   render() {
 //     const { notes } = this.state;
 
+const UNSPECIFIED = -1;
+
 function Companies() {
-  const sectorOptions = ['Sector A', 'Sector B', 'Sector C'];
   const statusOptions = ['Realized', 'Unrealized'];
   const [firms, setFirms] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState(UNSPECIFIED);
+  const [currentStatus, setCurrentStatus] = useState(UNSPECIFIED);
   const navigate = useNavigate()
-  const data = [
-    {
-      "_id": { "$oid": "656380685c4dd67c0e307510" },
-      "name": "Alphabet",
-      "intro": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "logo": "https://1000logos.net/wp-content/uploads/2017/12/Chevron-Logo.png",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu sapien mi. Morbi sed pulvinar justo. Fusce elementum mi ipsum, nec faucibus enim eleifend ut. Nunc at nunc eu enim fringilla vestibulum malesuada a nisi. Pellentesque sollicitudin ligula vel malesuada facilisis. Maecenas nec elit egestas nunc euismod consequat. Nulla vehicula urna massa, dignissim efficitur metus ultrices ac. Integer at mauris vitae magna sodales aliquam. Sed sodales ullamcorper nunc, quis bibendum lectus malesuada et. Donec sit amet ipsum nisi. Nunc sed lobortis metus. Vivamus vel nunc finibus, porttitor nisi porttitor, aliquet lorem. Nulla lacinia, tellus a rutrum rhoncus, nulla ipsum luctus orci, quis aliquam neque urna id nibh. Aliquam erat volutpat.",
-      "status": "Current",
-      "investmentYear": { "$numberLong": "2022" },
-      "region": "North America"
-    },
-    {
-      "_id": { "$oid": "656380063c4dd67c0e30750f" },
-      "name": "Chevron",
-      "intro": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "logo": "https://1000logos.net/wp-content/uploads/2021/05/Alphabet-logo.png",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu sapien mi. Morbi sed pulvinar justo. Fusce elementum mi ipsum, nec faucibus enim eleifend ut. Nunc at nunc eu enim fringilla vestibulum malesuada a nisi. Pellentesque sollicitudin ligula vel malesuada facilisis. Maecenas nec elit egestas nunc euismod consequat. Nulla vehicula urna massa, dignissim efficitur metus ultrices ac. Integer at mauris vitae magna sodales aliquam. Sed sodales ullamcorper nunc, quis bibendum lectus malesuada et. Donec sit amet ipsum nisi. Nunc sed lobortis metus. Vivamus vel nunc finibus, porttitor nisi porttitor, aliquet lorem. Nulla lacinia, tellus a rutrum rhoncus, nulla ipsum luctus orci, quis aliquam neque urna id nibh. Aliquam erat volutpat.",
-      "status": "Current",
-      "investmentYear": { "$numberLong": "2020" },
-      "region": "North America"
-    },
-    {
-      "_id": { "$oid": "65637f6f3c4dd67c0e30750e" },
-      "name": "Alphabet",
-      "intro": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "logo": "https://1000logos.net/wp-content/uploads/2017/12/Chevron-Logo.png",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu sapien mi. Morbi sed pulvinar justo. Fusce elementum mi ipsum, nec faucibus enim eleifend ut. Nunc at nunc eu enim fringilla vestibulum malesuada a nisi. Pellentesque sollicitudin ligula vel malesuada facilisis. Maecenas nec elit egestas nunc euismod consequat. Nulla vehicula urna massa, dignissim efficitur metus ultrices ac. Integer at mauris vitae magna sodales aliquam. Sed sodales ullamcorper nunc, quis bibendum lectus malesuada et. Donec sit amet ipsum nisi. Nunc sed lobortis metus. Vivamus vel nunc finibus, porttitor nisi porttitor, aliquet lorem. Nulla lacinia, tellus a rutrum rhoncus, nulla ipsum luctus orci, quis aliquam neque urna id nibh. Aliquam erat volutpat.",
-      "status": "Realized",
-      "investmentYear": { "$numberLong": "2020" },
-      "region": "North America"
-    },
-    {
-      "_id": { "$oid": "65637f6f3c4dd67c0e30750e" },
-      "name": "Alphabet",
-      "intro": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-      "logo": "https://1000logos.net/wp-content/uploads/2021/05/Alphabet-logo.png",
-      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu sapien mi. Morbi sed pulvinar justo. Fusce elementum mi ipsum, nec faucibus enim eleifend ut. Nunc at nunc eu enim fringilla vestibulum malesuada a nisi. Pellentesque sollicitudin ligula vel malesuada facilisis. Maecenas nec elit egestas nunc euismod consequat. Nulla vehicula urna massa, dignissim efficitur metus ultrices ac. Integer at mauris vitae magna sodales aliquam. Sed sodales ullamcorper nunc, quis bibendum lectus malesuada et. Donec sit amet ipsum nisi. Nunc sed lobortis metus. Vivamus vel nunc finibus, porttitor nisi porttitor, aliquet lorem. Nulla lacinia, tellus a rutrum rhoncus, nulla ipsum luctus orci, quis aliquam neque urna id nibh. Aliquam erat volutpat.",
-      "status": "Realized",
-      "investmentYear": { "$numberLong": "2020" },
-      "region": "North America"
-    },
-    {"_id":{"$oid":"65637b193c4dd67c0e307506"},
-    "name": "Chevron",
-    "intro":"Building digital and poewer infrastructure",
-    "logo":"https://1000logos.net/wp-content/uploads/2017/12/Chevron-Logo.png",
-    "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu sapien mi. Morbi sed pulvinar justo. Fusce elementum mi ipsum, nec faucibus enim eleifend ut. Nunc at nunc eu enim fringilla vestibulum malesuada a nisi. Pellentesque sollicitudin ligula vel malesuada facilisis. Maecenas nec elit egestas nunc euismod consequat. Nulla vehicula urna massa, dignissim efficitur metus ultrices ac. Integer at mauris vitae magna sodales aliquam. Sed sodales ullamcorper nunc, quis bibendum lectus malesuada et. Donec sit amet ipsum nisi. Nunc sed lobortis metus. Vivamus vel nunc finibus, porttitor nisi porttitor, aliquet lorem. Nulla lacinia, tellus a rutrum rhoncus, nulla ipsum luctus orci, quis aliquam neque urna id nibh. Aliquam erat volutpat.",
-    "status":"Current",
-    "investmentYear":{"$numberLong":"2022"},
-    "region":"North America"},
-    {"_id":{"$oid":"75637d493c4dd67c0e30750a"},
-    "intro":"\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
-    "logo":"https://1000logos.net/wp-content/uploads/2021/05/Alphabet-logo.png",
-    "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu sapien mi. Morbi sed pulvinar justo. Fusce elementum mi ipsum, nec faucibus enim eleifend ut. Nunc at nunc eu enim fringilla vestibulum malesuada a nisi. Pellentesque sollicitudin ligula vel malesuada facilisis. Maecenas nec elit egestas nunc euismod consequat. Nulla vehicula urna massa, dignissim efficitur metus ultrices ac. Integer at mauris vitae magna sodales aliquam. Sed sodales ullamcorper nunc, quis bibendum lectus malesuada et. Donec sit amet ipsum nisi. Nunc sed lobortis metus. Vivamus vel nunc finibus, porttitor nisi porttitor, aliquet lorem. Nulla lacinia, tellus a rutrum rhoncus, nulla ipsum luctus orci, quis aliquam neque urna id nibh. Aliquam erat volutpat.",
-    "status":"Current",
-    "investmentYear":{"$numberLong":"2021"},
-    "region":"North America"}
-  ];
 
 
+  // get list of selected firms, if no categories selected get all firms
   useEffect(() => {
-    axios.get("http://localhost:5000/firms")
-      .then(response => {
+    axios
+      .get(`http://localhost:5000/firms/selected/${currentCategory}/${currentStatus}`)
+      .then((response) => {
         setFirms(response.data);
+        console.log("RESULT", response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching firm info:", error);
+      });
+  }, [currentCategory, currentStatus]);
+
+
+   // get list of all categories
+   useEffect(() => {
+    axios.get("http://localhost:5000/firms/categories")
+      .then(response => {
+        setCategories(response.data);
+        console.log(response.data)
       })
       .catch(error => {
-        console.error("Error fetching firm info:", error);
+        console.error("Error fetching categories:", error);
       });
   }, []);
 
   const handleLogoClick = (url) => {
     navigate(url); // Redirects the page to the specified URL
+  };
+
+  const handleCategoryClick = (category) => {
+    setCurrentCategory((prevCategory) =>
+      prevCategory === category ? UNSPECIFIED : category
+    );
+  };
+
+  const handleStatusClick = (status) => {
+    setCurrentStatus((prevStatus) =>
+      prevStatus === status ? UNSPECIFIED : status
+    );
   };
 
 
@@ -122,16 +97,17 @@ function Companies() {
 
           <li ><a href="#">Sector</a>
             <ul>
-              <li><a href="#">Sector A</a></li>
-              <li><a href="#">Sector B</a></li>
-              <li><a href="#">Sector C</a></li>
+                {categories.map(category => (
+                  <li key={category} onClick={() => handleCategoryClick(category)} className={currentCategory === category ? 'selected' : ''}>{category}</li>)
+                )}
+
             </ul>
           </li>
 
           <li><a href="#">Status</a>
             <ul>
-              <li><a href="#">Realized</a></li>
-              <li><a href="#">Unrealized</a></li>
+              <li onClick={() => handleStatusClick(true)} className={currentStatus === true ? 'selected' : ''}>Realized</li>
+              <li onClick={() => handleStatusClick(false)} className={currentStatus === false ? 'selected' : ''}>Unrealized</li>
             </ul>
           </li>
 
@@ -139,18 +115,12 @@ function Companies() {
       </div>
 
       <div className="image-grid">
-        {firms.map((firm) => (
-          <div
-            className="logo-container"
-            key={firm.title}
-            
-          >
-          
-           <CompanyDetail
-           props= {firm}
-           />
-          </div>
-        ))}
+        {firms.length > 0 ? (
+          firms.map((firm) => (
+            <div className="logo-container" key={firm.title} >
+            <CompanyDetail props= {firm} />
+            </div>
+        ))) : <h1>No firms matching these categories</h1>}
       </div>
     </div>
     </div>

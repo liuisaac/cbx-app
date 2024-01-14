@@ -55,9 +55,20 @@
   
   .logo-image {
     width: 100%;
-    max-width: 300px;
+    max-height: 200px;
+    max-width: 200px;
     height: auto;
     display: block;
     margin-bottom: 20px;
   }
+
+  .selected {
+    background-color: aquamarine;
+    padding: 20px;
+    display: inline-block;
+  }
+  
+
+  
+  
   
