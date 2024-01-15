@@ -83,31 +83,31 @@ const UserForm = ({user,onSubmit,onCancel,updateUserFlag}) => {
     <form onSubmit={handleSubmit} className="form">
       {/* First Name Field */}
       <div>
-        <label htmlFor="firstName">First Name </label>
+        <label htmlFor="firstName" className='input-label'>First Name </label>
         <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} />
       </div>
   
       {/* Last Name Field */}
       <div>
-        <label htmlFor="lastName">Last Name</label>
+        <label htmlFor="lastName" className='input-label'>Last Name</label>
         <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} />
       </div>
   
       {/* Is Alumni Field - Checkbox */}
       <div>
-        <label htmlFor="isAlumni">Alumni (tick if alumni) </label>
+        <label htmlFor="isAlumni" className='input-label'>Alumni (tick if alumni) </label>
         <input type="checkbox" id="isAlumni" name="isAlumni" checked={formData.isAlumni} onChange={handleChange} />
       </div>
   
       {/* Title Field */}
       <div>
-        <label htmlFor="title">Title </label>
+        <label htmlFor="title" className='input-label'>Title </label>
         <input type="text" id="title" name="title" value={formData.title} onChange={handleChange} />
       </div>
   
       {/* Picture Field  */}
       <div>
-        <label htmlFor="pictureFile">Picture File: </label>
+        <label htmlFor="pictureFile" className='input-label'>Picture File: </label>
         <label>{formData.pictureFile}</label>
       </div>
 

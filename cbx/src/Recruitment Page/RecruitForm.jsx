@@ -73,7 +73,7 @@ export default function RecruitmentForm() {
                     </label>
                     <div id="fileNameDisplay" className="text-white mt-2">{file ? `Selected file: ${file.name}` : ''}</div><br/><br/>
                 
-                    <input type="submit" value="Submit" className="hover:font-bold" disabled={sending}/>
+                    <input type="submit" value="Submit" className="hover:font-bold bg-gray-500 text-white py-2 px-4 rounded" disabled={sending}/>
                 </form>
             </section>
         </div>

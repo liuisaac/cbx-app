@@ -96,60 +96,60 @@ const FirmForm = ({firm,onSubmit,onCancel,updateFirmFlag}) => {
     <form onSubmit={handleSubmit} className="form">
       {/* Name Field */}
       <div>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name" className='input-label'>Name</label>
         <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
       </div>
   
       {/* Categories Field */}
       <div>
-        <label htmlFor="categories">Categories</label>
+        <label htmlFor="categories" className='input-label'>Categories (comma seperated, e.g. Tech,Finance,Healthcare)</label>
         <input type="text" id="categories" name="categories" value={formData.categories} onChange={handleChange} />
       </div>
   
       {/* Status Field - Checkbox */}
       <div>
-        <label htmlFor="status">Status (tick if realised)</label>
+        <label htmlFor="status" className='input-label'>Status (tick if realised)</label>
         <input type="checkbox" id="status" name="status" checked={formData.status} onChange={handleChange} />
       </div>
   
       {/* Tagline Field */}
       <div>
-        <label htmlFor="tagline">Tagline</label>
+        <label htmlFor="tagline" className='input-label'>Tagline</label>
         <input type="text" id="tagline" name="tagline" value={formData.tagline} onChange={handleChange} />
       </div>
   
       {/* Description Field */}
       <div>
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description" className='input-label'>Description</label>
         <textarea id="description" name="description" value={formData.description} onChange={handleChange}></textarea>
       </div>
   
       {/* AUMValue Field */}
       <div>
-        <label htmlFor="AUMvalue">AUMValue</label>
+        <label htmlFor="AUMvalue" className='input-label'>AUMValue</label>
         <input type="text" id="value" name="AUMvalue" value={formData.AUMvalue} onChange={handleChange} />
       </div>
   
       {/* Investment Year Field */}
       <div>
-        <label htmlFor="investmentYear">Investment Year</label>
+        <label htmlFor="investmentYear" className='input-label'>Investment Year</label>
         <input type="text" id="investmentYear" name="investmentYear" value={formData.investmentYear} onChange={handleChange} />
       </div>
   
       {/* Location Field */}
       <div>
-        <label htmlFor="location">Location</label>
+        <label htmlFor="location" className='input-label'>Location</label>
         <input type="text" id="location" name="location" value={formData.location} onChange={handleChange} />
       </div>
   
       {/* Picture Field  */}
       <div>
-        <label htmlFor="logofile">Logofile: </label>
+        <label htmlFor="logofile" className='input-label'>Logofile: </label>
         <label>{formData.logofile}</label>
       </div>
 
       <div>
-        <label htmlFor="pictureUpload">Picture</label>
+        <label htmlFor="pictureUpload" className='input-label'>Picture</label>
         <input type="file" id="pictureUpload" onChange={handleFileChange} />
       </div>
   
