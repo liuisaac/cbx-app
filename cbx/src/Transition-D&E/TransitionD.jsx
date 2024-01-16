@@ -46,7 +46,7 @@ function Companies() {
   // get list of selected firms, if no categories selected get all firms
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/firms/selected/${currentCategory}/${currentStatus}`)
+      .get(`http://cbx-backend-e5909b4449e5.herokuapp.com/firms/selected/${currentCategory}/${currentStatus}`)
       .then((response) => {
         setFirms(response.data);
         console.log("RESULT", response.data);
@@ -59,7 +59,7 @@ function Companies() {
 
    // get list of all categories
    useEffect(() => {
-    axios.get("http://localhost:5000/firms/categories")
+    axios.get("http://cbx-backend-e5909b4449e5.herokuapp.com/firms/categories")
       .then(response => {
         setCategories(response.data);
         console.log(response.data)

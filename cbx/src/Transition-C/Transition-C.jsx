@@ -7,7 +7,7 @@ function TransitionC() {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/team/members")
+    axios.get("https://cbx-backend-e5909b4449e5.herokuapp.com/team/members")
       .then(response => {
         setMembers(response.data);
       })

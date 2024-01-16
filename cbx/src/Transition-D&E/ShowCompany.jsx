@@ -12,7 +12,7 @@ function ShowCompanies() {
   const [currentFirm, setCurrentFirm] = useState([]);
  
   useEffect(() => {
-    axios.get("http://localhost:5000/firms")
+    axios.get("http://cbx-backend-e5909b4449e5.herokuapp.com/firms")
       .then(response => {
         setFirms(response.data);
         const foundFirm = response.data.find(firm => firm.name === name);

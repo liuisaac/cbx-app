@@ -16,7 +16,7 @@ const LoginPage = () => {
     const handleLogin = async () => {
         try {
             const response = await axios.post(
-                'http://localhost:5000/admin/login',
+                'http://cbx-backend-e5909b4449e5.herokuapp.com/admin/login',
                 {
                     email,
                     password,
@@ -39,7 +39,7 @@ const LoginPage = () => {
                 axios.defaults.headers.common['Authorization'] = `Bearer ${newAccessToken}`;
 
                 // Perform a GET request to the '/admin' route after successful login
-                await axios.get('http://localhost:5000/admin', {
+                await axios.get('http://cbx-backend-e5909b4449e5.herokuapp.com/admin', {
                     withCredentials: true,
                 });
             } else {
@@ -66,7 +66,7 @@ const LoginPage = () => {
 
     const handleLogout = async () => {
         try {
-            const response = await axios.delete('http://localhost:5000/admin/logout', {
+            const response = await axios.delete('http://cbx-backend-e5909b4449e5.herokuapp.com/admin/logout', {
                 withCredentials: true,
             });
     

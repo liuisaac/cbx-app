@@ -30,7 +30,7 @@ export default function RecruitmentForm() {
             // start sending process
             setSending(true);
             try {
-              await axios.post("http://localhost:5000/team/sendpdf", formData, {
+              await axios.post("http://cbx-backend-e5909b4449e5.herokuapp.com/team/sendpdf", formData, {
                 headers: {
                   "Content-Type": "multipart/form-data",
                 },

@@ -25,7 +25,7 @@ const Dashboard = ({onLogout, accessToken}) => {
   const checkAuthentication = async () => {
     try {
         axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-        await axios.get('http://localhost:5000/admin', {
+        await axios.get('http://cbx-backend-e5909b4449e5.herokuapp.com/admin', {
             withCredentials: true,
         });
     } catch (error) {
@@ -39,7 +39,7 @@ const Dashboard = ({onLogout, accessToken}) => {
   const [firms, setFirms] = useState([]);
   const fetchFirms = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/firms");
+      const response = await axios.get("http://cbx-backend-e5909b4449e5.herokuapp.com/firms");
       setFirms(response.data);
     } catch (error) {
       console.error("Error fetching firm info:", error);
@@ -48,7 +48,7 @@ const Dashboard = ({onLogout, accessToken}) => {
 
   const addFirm = async (postData) => {
     try {
-      const response = await axios.post('http://localhost:5000/firms/firmAdd', postData);
+      const response = await axios.post('http://cbx-backend-e5909b4449e5.herokuapp.com/firms/firmAdd', postData);
       return response;
     } catch (error) {
       return error.response.data;
@@ -58,7 +58,7 @@ const Dashboard = ({onLogout, accessToken}) => {
   
   const deleteFirm = async (firmId) => {
     try {
-      await axios.delete(`http://localhost:5000/firms/${firmId}`);
+      await axios.delete(`http://cbx-backend-e5909b4449e5.herokuapp.com/firms/${firmId}`);
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
       alert(error.response.data.error);
@@ -67,7 +67,7 @@ const Dashboard = ({onLogout, accessToken}) => {
 
   const updateFirm = async (putData) => {
     try {
-      await axios.put(`http://localhost:5000/firms/firmUpdate`, putData);
+      await axios.put(`http://cbx-backend-e5909b4449e5.herokuapp.com/firms/firmUpdate`, putData);
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
       alert(error.response.data.error);
@@ -130,7 +130,7 @@ const Dashboard = ({onLogout, accessToken}) => {
   const [users, setUsers] = useState([]);
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/team/all");
+      const response = await axios.get("http://cbx-backend-e5909b4449e5.herokuapp.com/team/all");
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching user info:", error);
@@ -139,7 +139,7 @@ const Dashboard = ({onLogout, accessToken}) => {
 
   const addUser = async (postData) => {
     try {
-      const response = await axios.post('http://localhost:5000/team/userAdd', postData);
+      const response = await axios.post('http://cbx-backend-e5909b4449e5.herokuapp.com/team/userAdd', postData);
       return response;
     } catch (error) {
       return error.response.data;
@@ -149,7 +149,7 @@ const Dashboard = ({onLogout, accessToken}) => {
   
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/team/${userId}`);
+      await axios.delete(`http://cbx-backend-e5909b4449e5.herokuapp.com/team/${userId}`);
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
       alert(error.response.data.error);
@@ -158,7 +158,7 @@ const Dashboard = ({onLogout, accessToken}) => {
 
   const updateUser = async (putData) => {
     try {
-      await axios.put(`http://localhost:5000/team/userUpdate`, putData);
+      await axios.put(`http://cbx-backend-e5909b4449e5.herokuapp.com/team/userUpdate`, putData);
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
       alert(error.response.data.error);
