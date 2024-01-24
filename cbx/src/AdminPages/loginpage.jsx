@@ -22,22 +22,22 @@ const LoginPage = () => {
                     password,
                 },
                 {
-                    withCredentials: true, // Include credentials for cross-origin requests
+                    withCredentials: true,
                 }
             );
-
+    
             const data = await response.data;
-
+    
             if (data.success) {
                 setLoggedIn(true);
                 setAttemptedLogin(false);
                 setEmail('');
                 setPassword('');
-
+    
                 const newAccessToken = data.accessToken;
                 setAccessToken(newAccessToken);
                 axios.defaults.headers.common['Authorization'] = `Bearer ${newAccessToken}`;
-
+    
                 // Perform a GET request to the '/admin' route after successful login
                 await axios.get('http://cbx-backend-e5909b4449e5.herokuapp.com/admin', {
                     withCredentials: true,
@@ -46,25 +46,30 @@ const LoginPage = () => {
                 setMessage(data.message); // Login failed
             }
         } catch (error) {
-            if (error.response && error.response.status === 403) {
-                setLoggedIn(false);
-                setMessage("Your session has expired. Please log in again.");
-            } else if (error.response && error.response.status === 401){
-                setAttemptedLogin(true);
-                setMessage("Invalid email or password.");
+            console.error('Login error:', error);
+    
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                console.error('Response status:', error.response.status);
+                console.error('Response data:', error.response.data);
+            } else if (error.request) {
+                // The request was made but no response was received
+                console.error('No response received:', error.request);
             } else {
-                setAttemptedLogin(true);
-                setMessage("Server error. Please wait a few moments and try again.");
+                // Something happened in setting up the request that triggered an Error
+                console.error('Error setting up the request:', error.message);
             }
-            
-            
+    
+            setAttemptedLogin(true);
+            setMessage('An error occurred during login. Please try again.');
             setLoggedIn(false);
-            setAccessToken('')
-            await handleLogout();
+            setAccessToken('');
+            //await handleLogout();
         }
     };
 
     const handleLogout = async () => {
+        console.log("Logging out for some reason")
         try {
             const response = await axios.delete('http://cbx-backend-e5909b4449e5.herokuapp.com/admin/logout', {
                 withCredentials: true,
