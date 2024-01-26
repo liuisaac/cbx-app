@@ -92,7 +92,7 @@ function Companies() {
     <div className="image-container">
       <h2>Companies</h2>
 
-      <div class="menu">
+      <div className="menu">
         <ul>
 
           <li ><a href="#">Sector</a>

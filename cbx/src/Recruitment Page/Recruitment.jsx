@@ -1,45 +1,37 @@
-import React, { useState } from 'react';
+
 // import '../../dist/output.css'; // Import Tailwind CSS
 import NavBar from "../Transition-B/Transition-B";
 import { Link } from 'react-router-dom'
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 const Recruitment = () => {
-    const [fileName, setFileName] = useState('');
 
-    const handleFileChange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const fileType = file.type;
-            const allowedTypes = ["application/pdf"];
 
-            if (!allowedTypes.includes(fileType)) {
-                alert("Please select a PDF file.");
-                event.target.value = ''; // Reset the input
-            } else {
-                setFileName(file.name);
-                // This snippet is incomplete! From here, the code is
-                // suppose to interface with the backend. 
-            }
-        }
-    };
 
-    const handleScrollClick = () => {
-        document.getElementById('applicationForm').scrollIntoView({
-            behavior: 'smooth'
-        });
-    };
 
     return (
         <div className='h-screen w-screen flex flex-col'>
             <NavBar />
-            <div id="recruitment" className="flex flex-col justify-center items-center font-bold text-4xl text-white h-full w-full">
+            <div id="recruitment" className="flex flex-col justify-center items-center font-bold text-4xl text-white h-full w-full mb-56">
                 <div>
                     Applications for 2024 are now open
+                    {/* application open fall 2024 */}
                     <br />
                     <span className="text-xl font-bold">
-                        <Link to="/applicationForm" className="text-customBlue underline">
-                            Analyst application
-                        </Link>{' '}
-                        open: August 2, 2024
+                        {/* Use ScrollLink instead of Link */}
+                        <ScrollLink style={{
+                            textDecoration: "underline",
+                            cursor: "pointer",
+                            transition: "color 0.3s ease", // Adding a transition for a smooth effect
+                            color: "lightblue", // Default color
+                        }} to="applicationForm" smooth={true} duration={500}>
+                            Investment team application
+                            {/* Investment team resume*/}
+                        </ScrollLink>{' '}
+                         open: August 2, 2024
+                    </span> <br />
+                    <span style={{fontSize:"15px"}}>
+                    Operations team application open: January 29, 2024
+                    
                     </span>
                 </div>
             </div>

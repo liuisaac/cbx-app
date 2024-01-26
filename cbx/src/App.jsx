@@ -14,7 +14,7 @@ import Bricks from "./Bricks Page/Bricks.jsx";
 import { Route, Routes,Router } from "react-router-dom";
 import RecruitmentForm from "./Recruitment Page/RecruitForm.jsx";
 import Companies from './Transition-D&E/TransitionD.jsx';
-import NavBar from "./Navbar.jsx";
+import NavBar from "./Transition-B/Transition-B.jsx";
 import './App.css';
 import PartnerFirms from './pages/Partner-Firms.js' //formerly transition F
 import Alumni from'./pages/Alumni.js'; //formerly transition C
@@ -22,7 +22,10 @@ import styles from "./style.js";
 import ShowCompanies from "./Transition-D&E/ShowCompany.jsx";
 import Recruitment from "./Recruitment Page/Recruitment.jsx"
 import LoginForm from "./Login/LoginForm.jsx";
-
+import About from "./About.jsx";
+import ComingSoon from "./ComingSoon.jsx";
+import adminDashboard from "./AdminPages/adminDashboard.jsx"
+import Footer from "./static/Footer.jsx"
 function App() {
   return (
     <div>
@@ -35,32 +38,45 @@ function App() {
           <Metrics />
           <Bricks />
           <Recruitment />
-          <TransitionH />
+          <RecruitmentForm />
+          <Footer/>
+        </>} />
+        <Route path="/Admin" element={<>
+          {/* Render components for the '/' route */}
+        
         </>} />
 
         <Route path="/About" element={<>
-          <Alumni/>
+       <About/>
         </>} />
 
         <Route path="/Team" element={<>
-          <TransitionC />
+          {/* <TransitionC /> */}
+          <ComingSoon/>
         </>} />
 
         <Route path="/Portfolio" element={<>
-        
-          <TransitionD />
+          <ComingSoon/>
+          {/* <TransitionD /> */}
         </>} />
 
         <Route path="/Partners" element={<>
-      
+      <ComingSoon/>
+           
+           {/* <TransitionF />
+          <TransitionG />  */}
+        </>} />
+
+        <Route path="/partner-firms" element={<>
+      <ComingSoon/>
           
-          <TransitionF />
-          <TransitionG />
+          {/* <TransitionF />
+          <TransitionG /> */}
         </>} />
 
         <Route path="/Alumni" element={<>
-  
-          <TransitionCAlumni/>
+          <ComingSoon/>
+          {/* <TransitionCAlumni/> */}
         </>} />
 
         <Route path="/Recruiting" element={<>
@@ -72,7 +88,7 @@ function App() {
           <RecruitmentForm />
         </>} />
 
-        <Route path="/Login" element={<>
+        <Route path="/lp-login" element={<>
           
           <LoginPage />
         </>} />

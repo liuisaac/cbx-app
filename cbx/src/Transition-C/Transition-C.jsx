@@ -19,7 +19,8 @@ function TransitionC() {
   return (
     <div>
       <NavBar/>
-    
+    {/* have categories for different positions show a all ones */}
+    {/* copy the target tab where you click on something and it shows a select people */}
     <div className="md:w-5/6 lg:w-4/6 px-5 py-24 mx-auto text-white">
       <div className="text-left w-full">
         <h1 className="ml-4 text-4xl font-bold fadeInSlow">Our Team</h1>
@@ -27,11 +28,11 @@ function TransitionC() {
       <br />
       <div className="flex flex-wrap m-4">
         {members.map((member) => (
-          <div key={member.key} className="p-4 lg:w-1/4 md:w-1/2">
+          <div key={member.key} className="p-4 lg:w-1.5/4 md:w-1/3">
             <div className="h-full flex flex-col items-center text-center">
               <a href={member.href} className="opacity-0 fadeInSlow">
                 <img
-                  className="shadow rounded-sm object-cover h-48 aspect-[35/45] align-middle border-none"
+                  className="shadow rounded-sm object-cover h-80  aspect-[45/45] align-middle border-none"
                   src={member.pictureFile}
                   alt={`${member.firstName} ${member.lastName}`}
                   onError={(e) => {

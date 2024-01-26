@@ -3,6 +3,7 @@ import axios from 'axios';
 import './loginpage.css';
 import Dashboard from './adminDashboard';
 import NavBar from '../Transition-B/Transition-B';
+import background from "../assets/LP_Login.jpeg"
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -92,9 +93,17 @@ const LoginPage = () => {
           
      
         !isLoggedIn ? (
-            <div>  <NavBar/>
+              <div
+            style={{
+              backgroundImage: `url(${background})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              minHeight: "100vh", // Ensure the div covers the full height of the viewport
+            }}
+          > <NavBar/>
         <>
-            <div className="login-container">
+            <div style={{marginTop:"20vh"}} className="login-container">
                 <div className="input-group">
                     <label>Email:</label>
                     <input

@@ -1,4 +1,3 @@
-import NavBar from "../Transition-B/Transition-B";
 import React, {
     useRef,
     useState,
@@ -21,6 +20,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { scrollAnimation } from "../scroll.animation";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,23 +124,20 @@ const Bricks = forwardRef((props, ref) => {
 
     return (
         <div id="brick" style={{ width: "100vw", height: "100vh", position: "relative" }}>
-            <NavBar />
+      
             <div style={{ display: "flex" }}>
-                <div style={{ flex: 1 }}>
-                    <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
-                        <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
-                    </div>
-                </div>
+                
                 <div style={{ flex: 1, color: "white", padding: "0 20px" }}>
-                    <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "3rem" }}>
+                    <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "3rem",  marginLeft:"3rem" }}>
                         Built from the ground up to be different
                     </h1>
                     <p style={{
                         fontSize: "0.9rem",
                         lineHeight: "1.5",
                         textAlign: "left",
+                        marginLeft:"3rem"
                     }}>
-                        CBX Partners' ethos is two-fold: deliver industry-leading returns for its investors and provide select Columbia undergraduates
+                        CBX Partners&apos; ethos is two-fold: deliver industry-leading returns for its investors and provide select Columbia undergraduates
                         with the investing intuition and competitive edge needed to dominate careers at the world’s leading investment and strategic advisory firms.
                         <br /><br />
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -154,10 +151,16 @@ const Bricks = forwardRef((props, ref) => {
                     </p>
 
                 </div>
+                <div style={{ flex: 1 }}>
+                    <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
+                        <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
+                    </div>
+                </div>
             </div>
         </div>
 
     );
 });
+Bricks.displayName = 'Bricks';
 
 export default Bricks;

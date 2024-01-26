@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import { logo } from "../static/assets"
-import { navLinks } from "../static/constants/navconsts"
+import { logo } from "./assets"
+import { navLinks } from "./constants/navconsts"
 import { Link } from "react-router-dom"
 
 const NavBar = () => {
@@ -11,6 +11,7 @@ const NavBar = () => {
     }, 10)
     return () => clearTimeout(timeout)
   }, [])
+  // Navbar for the other pages static
   return (
     <>
       <div className="invisible h-32"></div>

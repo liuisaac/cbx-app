@@ -1,12 +1,20 @@
 import { useState } from "react";
-
+import background from "../assets/LP_Login.jpeg"
 import React, { useEffect, useMemo, useRef } from "react";
 
 import NavBar from "../Transition-B/Transition-B";
 export default function LoginForm(){
     const [transition, setTransition] = useState(false);
     return (
-        <div>
+        <div
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        minHeight: "100vh", // Ensure the div covers the full height of the viewport
+      }}
+    >
             <NavBar/>
          <div className="absolute w-full h-full flex flex-col justify-center items-center z-50"
         
