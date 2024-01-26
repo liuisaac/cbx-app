@@ -25,9 +25,9 @@ const Dashboard = ({onLogout, accessToken}) => {
   const checkAuthentication = async () => {
     try {
         axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-        await axios.get('http://cbx-backend-e5909b4449e5.herokuapp.com/admin', {
-            withCredentials: true,
-        });
+        // await axios.get('http://cbx-backend-e5909b4449e5.herokuapp.com/admin', {
+        //     withCredentials: true,
+        // });
     } catch (error) {
         console.log("ERROR:", error);
         alert("Token expired, please log in again")
