@@ -1,11 +1,11 @@
-import TransitionC from'../Transition-C/Transition-C.jsx';
+// import TransitionC from'../Transition-C/Transition-C.jsx';
 
-export default function(){
+// export default function(){
 
-    return (
-        <>
+//     return (
+//         <>
         
-        <TransitionC />
-        </>
-    );
-}
+//         <TransitionC />
+//         </>
+//     );
+// }
