@@ -1,30 +1,30 @@
 export const navLinks = [
   {
     id: "about",
-    title: "About",
+    title: "about",
   },
   {
     id: "team",
-    title: "Team",
+    title: "team",
   },
   {
     id: "portfolio",
-    title: "Portfolio",
+    title: "portfolio",
   },
   {
     id: "partner-firms",
-    title: "Partners",
+    title: "partners",
   },
   {
     id: "alumni",
-    title: "Alumni",
+    title: "alumni",
   },
   {
     id: "recruiting",
-    title: "Recruiting",
+    title: "recruiting",
   },
   {
     id: "lp-login",
-    title: "LP Login",
+    title: "lP Login",
   },
 ];

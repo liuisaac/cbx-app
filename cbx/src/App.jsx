@@ -41,26 +41,26 @@ function App() {
           <RecruitmentForm />
           <Footer/>
         </>} />
-        <Route path="/Admin" element={<>
+        <Route path="/admin" element={<>
           {/* Render components for the '/' route */}
         
         </>} />
 
-        <Route path="/About" element={<>
+        <Route path="/about" element={<>
        <About/>
         </>} />
 
-        <Route path="/Team" element={<>
+        <Route path="/team" element={<>
           {/* <TransitionC /> */}
           <ComingSoon/>
         </>} />
 
-        <Route path="/Portfolio" element={<>
+        <Route path="/portfolio" element={<>
           <ComingSoon/>
           {/* <TransitionD /> */}
         </>} />
 
-        <Route path="/Partners" element={<>
+        <Route path="/partners" element={<>
       <ComingSoon/>
            
            {/* <TransitionF />
@@ -74,12 +74,12 @@ function App() {
           <TransitionG /> */}
         </>} />
 
-        <Route path="/Alumni" element={<>
+        <Route path="/alumni" element={<>
           <ComingSoon/>
           {/* <TransitionCAlumni/> */}
         </>} />
 
-        <Route path="/Recruiting" element={<>
+        <Route path="/recruiting" element={<>
           
           <RecruitmentForm />
         </>} />
