@@ -110,27 +110,26 @@ const Metrics = () => {
 
   return (
     <div style={{ width: "fit-content", height: "fit-content", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", flexWrap: "wrap" }}>
-    <div style={{ flex: "0 0 100%", height: "50vw", color: 'white', fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "11rem", textAlign: "center", marginLeft: "5rem" }}>
-      <p>Founded in 2023, CBX Capital Partners LP is</p>
-      <p>Columbia’s first student-run private equity firm</p>
-      <p>that seeks to co-invest with partner private</p>
-      <p>investment firms on a minority basis. With the</p>
-      <p>highest committed capital of any Columbia</p>
-      <p>student-run investment vehicle, the firm is</p>
-      <p>actively seeking additional investors for our first</p>
-      <p>fund — CBX Partners I.</p>
-    </div>
+      <div style={{ flex: "0 0 100%", height: "50vw", color: 'white', fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "11rem", textAlign: "center", marginLeft: "5rem" }}>
+        <p>
+          Founded in 2023, CBX Partners is a private equity <br></br>
+          firm ran exclusively by Columbia undergraduates.<br></br>
+          CBX Partners makes co-investments in buyout<br></br>  
+          transactions alongside partner private investment firms.
 
-    <div style={{ width: "100%", height: "fit-content", overflow: "visible" }}>
-      <Canvas style={{ position: "absolute", top: 0, left: 0, marginTop: "120vh", marginLeft: "35vh" }}>
-        <Rig />
-        <directionalLight color="white" position={[200, -100, -500]} intensity={3} />
-        <directionalLight color="white" position={[-30, 100, 30]} intensity={3} />
-        <ambientLight />
-        <Obj />
-      </Canvas>
+        </p>
+      </div>
+
+      <div style={{ width: "100%", height: "fit-content", overflow: "visible" }}>
+        <Canvas style={{ position: "absolute", top: 0, left: 0, marginTop: "120vh", marginLeft: "35vh" }}>
+          <Rig />
+          <directionalLight color="white" position={[200, -100, -500]} intensity={3} />
+          <directionalLight color="white" position={[-30, 100, 30]} intensity={3} />
+          <ambientLight />
+          <Obj />
+        </Canvas>
+      </div>
     </div>
-  </div>
   );
 }
 

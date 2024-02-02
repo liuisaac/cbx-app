@@ -8,7 +8,11 @@ import Button from "./Button";
 import Navbar from "./Navbar";
 import Transition_h from "./Transition-H/TransitionH";
 
-import { facebook, instagram, linkedin, twitter } from "./assets";
+// import facebook from "./assets/facebook.png"
+// import instagram from "./assets/instagram.png"
+// import twitter from "./assets/twitter.png"
+// import email from "./assets/email.png"
+// import linkedin from "./assets/linkedin.png"
 
 export const navLinks = [
   {
@@ -41,28 +45,28 @@ export const navLinks = [
   },
 ];
 
-export const socialMedia = [
-  {
-    id: "social-media-1",
-    icon: instagram,
-    link: "https://www.instagram.com/",
-  },
-  {
-    id: "social-media-2",
-    icon: facebook,
-    link: "https://www.facebook.com/",
-  },
-  {
-    id: "social-media-3",
-    icon: twitter,
-    link: "https://www.twitter.com/",
-  },
-  {
-    id: "social-media-4",
-    icon: linkedin,
-    link: "https://www.linkedin.com/",
-  },
-];
+// export const socialMedia = [
+//   {
+//     id: "social-media-1",
+//     icon: instagram,
+//     link: "https://www.instagram.com/",
+//   },
+//   {
+//     id: "social-media-2",
+//     icon: facebook,
+//     link: "https://www.facebook.com/",
+//   },
+//   {
+//     id: "social-media-3",
+//     icon: twitter,
+//     link: "https://www.twitter.com/",
+//   },
+//   {
+//     id: "social-media-4",
+//     icon: linkedin,
+//     link: "https://www.linkedin.com/",
+//   },
+// ];
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { logo } from "../static/assets";
+import React, { useState, useEffect } from "react";
+import logo from "../static/assets/final-logos.png";
 import { navLinks } from "../static/constants/navconsts";
 import { Link } from "react-router-dom";
 

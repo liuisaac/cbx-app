@@ -128,26 +128,28 @@ const Bricks = forwardRef((props, ref) => {
             <div style={{ display: "flex" }}>
                 
                 <div style={{ flex: 1, color: "white", padding: "0 20px" }}>
-                    <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "3rem",  marginLeft:"3rem" }}>
-                        Built from the ground up to be different
+                    <h1 style={{ fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "6rem",  marginLeft:"3rem" }}>
+                        Built from the ground up to be different.
                     </h1>
                     <p style={{
-                        fontSize: "0.9rem",
+                        fontSize: "1.1rem",
                         lineHeight: "1.5",
                         textAlign: "left",
-                        marginLeft:"3rem"
+                        marginLeft:"3rem",
+                        marginTop:"2rem"
                     }}>
-                        CBX Partners&apos; ethos is two-fold: deliver industry-leading returns for its investors and provide select Columbia undergraduates
-                        with the investing intuition and competitive edge needed to dominate careers at the world’s leading investment and strategic advisory firms.
+                        CBX Partners&apos; ethos is two-fold: deliver top quartile alpha for its investors and provide select Columbia undergraduates with the investing 
+                        intuition and competitive edge needed to dominate careers at the world’s leading investment and strategic advisory firms.
                         <br /><br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        We’re not a club. We don’t exist for resume padding. We’re a place where people who are not cut from the average cloth can go to build momentum.
+                        {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
                         id est laborum.
 
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. */}
                     </p>
 
                 </div>

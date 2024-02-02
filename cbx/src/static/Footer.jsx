@@ -1,8 +1,13 @@
 // Footer.jsx
+import facebook from "./assets/facebook.png"
+import linkedin from "./assets/linkedin.png"
+import email from "./assets/email.png"
+import twitter from "./assets/twitter.png"
+import instagram from "./assets/instagram.png"
 
 import React, { useState } from 'react';
 import { footerLinks } from './constants/footconsts';
-import { footer } from './assets';
+// import { footer } from './assets';
 
 const CookieNotice = ({ onAccept }) => {
   const handleAccept = () => {
@@ -18,7 +23,7 @@ const CookieNotice = ({ onAccept }) => {
     </div>
   );
 };
-
+const currentYear = new Date().getFullYear()
 const Footer = () => {
   const [showCookieNotice, setShowCookieNotice] = useState(true);
 
@@ -31,23 +36,34 @@ const Footer = () => {
       {showCookieNotice && <CookieNotice onAccept={handleCookieAccept} />}
       <div className="grid grid-cols-9 gap-4">
         <div className="col-start-1 col-3 w-64"> 
-          <img className='object-contain h-16 content-start' src={footer} alt='CBX Partners Logo'/>
+          {/* <img className='object-contain h-16 content-start' src={footer} alt='CBX Partners Logo'/> */}
         </div>
-        <div className="col-start-6 mx-3">
+        <div className="col-start-7 mx-3">
           <ul className="flex items-center">
-            {footerLinks.map((foot, index) => (
-              <li key={foot.id} className="flex items-center m-4">
-                <a href={`${foot.id}`}>{foot.title}</a>
-              </li>
-            ))}
+       
+            <li>
+              <a href="www.gmail.com" target="_blank" rel="noreferrer"><img style={{width:"2rem", marginRight:"4rem"}} src={email} alt="" /></a>
+            </li>
+            <li>
+            <a href="www.facebook.com" target="_blank" rel="noreferrer"><img style={{width:"2rem", marginRight:"4rem"}} src={facebook} alt="" /></a>
+            </li>
+            <li>
+            <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fcbxpartners" target="_blank" rel="noreferrer"><img style={{width:"2rem", marginRight:"4rem"}} src={twitter} alt="" /></a>
+            </li>
+            <li>
+            <a href="https://www.instagram.com/cbxpartners/" target="_blank" rel="noreferrer"><img style={{width:"2rem", marginRight:"4rem"}} src={instagram} alt="" /></a>
+            </li>
+            <li>
+            <a href="https://www.linkedin.com/company/cbxpartners/" target="_blank" rel="noreferrer"><img style={{width:"2rem", marginRight:"4rem"}} src={linkedin} alt="" /></a>
+            </li>
           </ul>
         </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="grid grid-cols-9 mt-5 text-left">
         <div className="col-start-1 col-span-2">
-          <p>© 2023 CBX Capital Partners LP.</p>
-          <a href='about:blank' className="text-blue-500 hover:underline">Legal</a>
+          <p>© {currentYear} CBX Capital Partners LP. All Rights Reserved.</p>
+
         </div>
       </div>
     </footer>

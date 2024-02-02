@@ -1,9 +1,8 @@
-import logo from "./final-logos.png";
-import facebook from "./facebook.svg";
-import instagram from "./instagram.svg";
-import linkedin from "./linkedin.svg";
-import twitter from "./twitter.svg";
-import email from "./email.svg";
-import footer from "./footer.png"
+// import logo from "./final-logos.png";
+// import facebook from "../assets/facebook.png";
+// import instagram from "../assets/instagram.png";
+// import linkedin from "../assets/linkedin.png";
+// import twitter from "../assetstwitter.png";
+// import email from "../assets/email.png"
 
-export { footer, logo, facebook, instagram, linkedin, twitter, email };
+// export { footer, logo, facebook, instagram, linkedin, twitter, email };

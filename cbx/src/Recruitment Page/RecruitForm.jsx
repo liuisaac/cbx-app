@@ -26,6 +26,7 @@ export default function RecruitmentForm() {
             formData.append("file", file);
             formData.append("ApplicantEmail", email);
             formData.append("Name", name)
+            
       
             // start sending process
             setSending(true);
@@ -43,7 +44,7 @@ export default function RecruitmentForm() {
               setSending(false);
             }
           } else {
-            alert("Please select a PDF and fill all relevent fields");
+            alert("Please select a PDF and fill all relevant fields");
           }
 
     }
@@ -54,13 +55,13 @@ export default function RecruitmentForm() {
             <section  className="h-screen flex flex-col justify-center items-center text-black">
                 {/* Note: The action functionality for form submission is not yet implemented. */}
                 <form action="/submit-form" method="post" onSubmit={handleSubmit}>
-                    <span className="font-bold text-3xl text-black">Operations team 2024 Analyst application</span>
+                    <span className="font-bold text-3xl text-black">General Resume Drop 2024</span>
                     <br/><br/>
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" id="name" name="name" className="bg-transparent border-b border-black focus:border-white focus:outline-none text-black"  onChange={(event) => setName(event.target.value)}/><br/><br/>
+                    <label htmlFor="name">Name | Investment/Operations: </label>
+                    <input type="text" id="name" name="name" placeholder='Name | Investment/Operations' className="bg-transparent border-b border-black focus:border-white focus:outline-none text-black"  onChange={(event) => setName(event.target.value)}/><br/><br/>
                 
                     <label htmlFor="email">Email: </label>
-                    <input type="email" id="email" name="email" className="bg-transparent border-b border-black focus:border-white focus:outline-none text-black" onChange={(event) => setEmail(event.target.value)}/><br/><br/>
+                    <input type="email" id="email" name="email" placeholder='Columbia School Email' className="bg-transparent border-b border-black focus:border-white focus:outline-none text-black" onChange={(event) => setEmail(event.target.value)}/><br/><br/>
                 
                     <label htmlFor="fileInput">Resume: </label>
                     <label id="fileLabel" className="text-customBlue underline py-2 px-4 cursor-pointer inline-block">
