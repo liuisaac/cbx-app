@@ -13,7 +13,7 @@ const Recruitment = () => {
             <NavBar />
             <div id="recruitment" className="flex flex-col justify-center items-center font-bold text-4xl text-white h-full w-full mb-56">
                 <div>
-                    Applications for 2024 are now open
+                    Applications Open Fall 2024
                     {/* application open fall 2024 */}
                     <br />
                     <span className="text-xl font-bold">
@@ -24,13 +24,21 @@ const Recruitment = () => {
                             transition: "color 0.3s ease", // Adding a transition for a smooth effect
                             color: "lightblue", // Default color
                         }} to="applicationForm" smooth={true} duration={500}>
-                            Investment team application
+                            Investment Team Resume Drop 
                             {/* Investment team resume*/}
                         </ScrollLink>{' '}
-                         open: August 2, 2024
+                        | Submit Interest
                     </span> <br />
                     <span style={{fontSize:"15px"}}>
-                    Operations team application open: January 29, 2024
+                    <ScrollLink style={{
+                            textDecoration: "underline",
+                            cursor: "pointer",
+                            transition: "color 0.3s ease", // Adding a transition for a smooth effect
+                            color: "lightblue", // Default color
+                        }} to="applicationForm" smooth={true} duration={500}>
+                            Operations Team Resume Drop 
+                            {/* Investment team resume*/}
+                        </ScrollLink> | Submit Interest
                     
                     </span>
                 </div>

@@ -6,7 +6,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useMousePosition } from "../src/Transition-H/useMousePosition";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
-
+import Footer from "./static/Footer";
 export default function About(){
 
   const [Init, setInit] = useState(false);
@@ -106,19 +106,18 @@ export default function About(){
           }
       }, []);}
   return (
-    <div>
+    <div >
         <NavBar/>
     
-        <div style={{ flex: "0 0 100%", height: "50vw", color: 'white', fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "8rem", textAlign: "center", marginLeft: "-35rem" }}>
-      <p>Founded in 2023, CBX Capital Partners LP is</p>
-      <p>Columbia’s first student-run private equity firm</p>
-      <p>that seeks to co-invest with partner private</p>
-      <p>investment firms on a minority basis. With the</p>
-      <p>highest committed capital of any Columbia</p>
-      <p>student-run investment vehicle, the firm is</p>
-      <p>actively seeking additional investors for our first</p>
-      <p>fund — CBX Partners I.</p>
-    </div>
+        <div style={{ flex: "0 0 100%", height: "30vw", color: 'white', fontWeight: "bold", fontSize: "1.5rem", marginBottom: "1rem", marginTop: "11rem", textAlign: "center", marginLeft: "-35rem" }}>
+        <p>
+          Founded in 2023, CBX Partners is a private equity <br></br>
+          firm ran exclusively by Columbia undergraduates.<br></br>
+          CBX Partners makes co-investments in buyout<br></br>  
+          transactions alongside partner private investment firms.
+
+        </p>
+      </div>
          
           <div  onClick={() => {
             setInit(true);
@@ -133,16 +132,6 @@ export default function About(){
                 <Obj />
             </Canvas>
           </div>
-           
-            
-      
-            
-            
-            
-       
-      
-
-   
 
     </div>
     

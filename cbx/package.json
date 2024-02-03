@@ -1,5 +1,5 @@
 {
-  "homepage": "http://luckbuck0/luckbuck0.github.io",
+  "homepage": "/",
   "name": "cbx",
   "version": "0.1.0",
   "private": true,
@@ -25,74 +25,6 @@
     "react-helmet": "^6.1.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.0",
-    "stream-browserify": "^3.0.0",
-    "stream-http": "^3.2.0",
-    "tailwind": "^4.0.0",
-    "three": "^0.160.0",
-    "timers-browserify": "^2.0.12",
-    "web-vitals": "^2.1.4",
-    "webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-0.9.1.tgz"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/webgi": "https://dist.pixotronics.com/webgi/runtime/bundle-types-0.9.1.tgz",
-    "gh-pages": "^6.1.1",
-    "react-router-dom": "^6.21.1",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
-  }
-}
-
-{
-  "name": "cbx",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@react-three/drei": "^9.92.7",
-    "@react-three/fiber": "^8.15.12",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^18.2.39",
-    "aws-sdk": "^2.1535.0",
-    "axios": "^1.6.3",
-    "crypto-browserify": "^3.12.0",
-    "domain-browser": "^5.7.0",
-    "dotenv": "^16.3.1",
-    "gsap": "^3.12.4",
-    "https-browserify": "^1.0.0",
-    "multer": "^1.4.5-lts.1",
-    "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-scripts": "5.0.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "tailwind": "^4.0.0",

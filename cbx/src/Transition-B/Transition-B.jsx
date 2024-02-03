@@ -1,28 +1,31 @@
-import { useState, useEffect } from "react"
-import { logo } from "../static/assets"
-import { navLinks } from "../static/constants/navconsts"
-import { Link } from "react-router-dom"
+import React, { useState, useEffect } from "react";
+import logo from "../static/assets/final-logos.png";
+import { navLinks } from "../static/constants/navconsts";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [transition, setTransition] = useState(false)
+  const [transition, setTransition] = useState(false);
+
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setTransition(true)
-    }, 10)
-    return () => clearTimeout(timeout)
-  }, [])
+      setTransition(true);
+    }, 10);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
       <div className="invisible h-32"></div>
       <nav className="z-50 bg-black w-full flex py-3 justify-between items-center navbar fixed top-0">
         <div className="overflow-hidden mt-8 flex justify-start font-poppins my-auto">
-          <a
+          <Link
             className={`transition duration-[2000ms] ${
               transition
                 ? `opacity-100 -translate-y-3`
                 : `opacity-0 translate-y-8`
             } transition ease-in-out`}
-            href="/"
+            to="/"
           >
             {" "}
             <img
@@ -30,7 +33,7 @@ const NavBar = () => {
               src={logo}
               alt="CBX Partners Logo"
             />{" "}
-          </a>
+          </Link>
         </div>
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
           {navLinks.map((nav, index) => (
@@ -43,15 +46,15 @@ const NavBar = () => {
               } transition duration-1000 ease-in-out`}
               style={{ transitionDelay: `${String(166 * index)}ms` }}
             >
-              <a className={`text-white`} href={`/${nav.id}`}>
+              <Link className={`text-white`} to={`/${nav.id}`}>
                 {nav.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
