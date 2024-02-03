@@ -7,7 +7,7 @@ import instagram from "./assets/instagram.png"
 
 import React, { useState } from 'react';
 import { footerLinks } from './constants/footconsts';
-// import { footer } from './assets';
+import logo from "../static/assets/final-logos.png";
 
 const CookieNotice = ({ onAccept }) => {
   const handleAccept = () => {
@@ -36,7 +36,7 @@ const Footer = () => {
       {showCookieNotice && <CookieNotice onAccept={handleCookieAccept} />}
       <div className="grid grid-cols-9 gap-4">
         <div className="col-start-1 col-3 w-64"> 
-          {/* <img className='object-contain h-16 content-start' src={footer} alt='CBX Partners Logo'/> */}
+          <img className='object-contain h-16 content-start' src={logo} alt='CBX Partners Logo'/>
         </div>
         <div className="col-start-7 mx-3">
           <ul className="flex items-center">
