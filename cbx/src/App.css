@@ -243,7 +243,3 @@ p {
 ::-webkit-scrollbar-thumb {
   transition: 200ms ease-in-out;
 }
-html,
-body {
-  overflow-x: hidden;
-}

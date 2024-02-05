@@ -3,10 +3,8 @@ import React, { useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { useMousePosition } from "../src/Transition-H/useMousePosition";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
-import Footer from "./static/Footer";
 export default function About(){
 
   const [Init, setInit] = useState(false);

@@ -19,9 +19,11 @@
   "homepage": "https://github.com/anajbdbl/CBX-Front#readme",
   "dependencies": {
     "@apollo/server": "^4.9.5",
+    "@vitejs/plugin-react": "^4.2.1",
     "dotenv": "^16.3.1",
     "graphql-tag": "^2.12.6",
     "mongoose": "^7.6.3",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "vite": "^5.0.12"
   }
 }

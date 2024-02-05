@@ -2,10 +2,9 @@ import React, { useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { useMousePosition } from "./useMousePosition";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
-import NavBar from "../Transition-B/Transition-B";
+
 const TransitionH = () => {
     const [Init, setInit] = useState(false);
 
