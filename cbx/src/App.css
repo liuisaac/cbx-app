@@ -222,3 +222,28 @@ p {
 .details {
   color: white;
 }
+
+/* Custom Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(200, 200, 200);
+  border: 2px solid #000000;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  transition: 200ms ease-in-out;
+}
+html,
+body {
+  overflow-x: hidden;
+}
