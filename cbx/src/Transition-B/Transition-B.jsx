@@ -2,9 +2,15 @@ import React, { useState, useEffect } from "react";
 import logo from "../static/assets/final-logos.png";
 import { navLinks } from "../static/constants/navconsts";
 import { Link } from "react-router-dom";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+
+
 
 const NavBar = () => {
     const [transition, setTransition] = useState(false);
+    const [hidden, setHidden] = useState(false);
+
+    const { scrollY } = useScroll();
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -14,10 +20,26 @@ const NavBar = () => {
         return () => clearTimeout(timeout);
     }, []);
 
+    useMotionValueEvent(scrollY, "change", (latest) => {
+      const previous = scrollY.getPrevious();
+      if (latest > previous && latest > 300) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+    });
+
     return (
         <>
-            <nav className="z-50 bg-black w-full flex py-0 justify-between items-center navbar fixed top-0">
-                <div className="overflow-hidden mt-8 flex justify-start font-poppins my-auto">
+            <motion.nav 
+            variants = {{
+              visible: { y:0 },
+              hidden: { y:"-100%" },
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.7, ease: "easeInOut"}}
+            className="z-50 bg-black w-full flex justify-between items-center navbar fixed top-0">
+                <div className="overflow-hidden mt-4 flex justify-start font-poppins my-auto">
                     <Link
                         className={`transition duration-[2000ms] ${
                             transition
@@ -28,13 +50,13 @@ const NavBar = () => {
                     >
                         {" "}
                         <img
-                            className="object-contain h-16 ml-5"
+                            className="object-contain h-16 ml-10"
                             src={logo}
                             alt="CBX Partners Logo"
                         />{" "}
                     </Link>
                 </div>
-                <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+                <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-5">
                     {navLinks.map((nav, index) => (
                         <li
                             key={nav.id}
@@ -53,7 +75,7 @@ const NavBar = () => {
                         </li>
                     ))}
                 </ul>
-            </nav>
+            </motion.nav>
         </>
     );
 };

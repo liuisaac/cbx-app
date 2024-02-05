@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import Navbar from "./Navbar";
 import Transition_h from "./Transition-H/TransitionH";
 
 // import facebook from "./assets/facebook.png"
@@ -81,4 +80,4 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-export { Navbar, Transition_h };
+export { Transition_h };
