@@ -7,7 +7,7 @@ import TransitionCAlumni from "./Transition-C/Transition-C Alumni.jsx";
 import LoginPage from "./AdminPages/loginpage.jsx";
 import TransitionH from "./Transition-H/TransitionH.jsx";
 import TransitionD from "./Transition-D&E/TransitionD.jsx";
-import TransitionF from "./Transition-F/Transition-F.tsx";
+// import TransitionF from "./Transition-F/Transition-F.tsx";
 import TransitionG from "./Transition-G/Transition-G.jsx";
 import Metrics from "./Metrics Page/Metrics.jsx";
 import Bricks from "./Bricks Page/Bricks.jsx";
