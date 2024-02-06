@@ -1,91 +1,31 @@
 @property --a{
     syntax: '<percentage>'; /* its type */
     inherits: false;
-    initial-value: 10%; /* the initial value */
+    initial-value: 0%; /* the initial value */
 }
 
 .transitionASlash {
-    --a: 50%;
+    --a: 0%;
     position: absolute;
     height: 5px;
-    width: 400px;
+    width: 30%;
     /*background-color: #B5DEF6;*/
     background: radial-gradient(#B5DEF6 var(--a), transparent 0);
-    transform: rotate(-45deg);
+    transform: rotate(-50deg);
 
     transition:--a 0.1s 0s;
     animation: transitionASlash;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes transitionASlash {
     from {
-        --a: 10%;
+        --a: 0%;
     }
     to {
         --a: 50%;
-    }
-}
-
-/* CBX */
-
-.transitionACbx {
-    -webkit-animation: transitionACbx;
-    animation: transitionACbx;
-    transform: translate(0%, -70%);
-    opacity: 1;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s
-}
-
-@-webkit-keyframes transitionACbx {
-    from {
-        opacity: 0;
-        transform: translate(100%, -150%);
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes transitionACbx {
-    from {
-        opacity: 0;
-        transform: translate(5%, -100%);
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Partners */
-
-.transitionAPartners {
-    -webkit-animation: transitionAPartners;
-    animation: transitionAPartners;
-    transform: translate(0, 70%);
-    opacity: 1;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s
-}
-
-@-webkit-keyframes transitionAPartners {
-    from {
-        opacity: 0;
-        transform: translate(-5%, 150%);
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes transitionAPartners {
-    from {
-        opacity: 0;
-        transform: translate(-5%, 150%);
-    }
-    to {
-        opacity: 1;
     }
 }

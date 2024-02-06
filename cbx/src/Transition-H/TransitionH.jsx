@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -58,7 +58,7 @@ const TransitionH = () => {
         const refMesh = useRef();
         const gltf = useLoader(GLTFLoader, "./thelion.glb");
 
-        useFrame(({ state }) => {
+        useFrame(() => {
             if (refMesh.current && Init) {
                 // refMesh.current.scale.set(2,2,2)
                 // rotating the object
@@ -82,51 +82,41 @@ const TransitionH = () => {
         );
     };
 
-    // const position = useMousePosition();
-    const [transition, setTransition] = useState(false);
-    // useEffect(() => {
-    //     const timeout = setTimeout(() => {
-    //         setTransition(true);
-    //     }, 3000);
-    //     return () => clearTimeout(timeout);
-    // }, []);
-
-    const W = () => {
-        const refMesh = useRef();
-        const store = useRef();
-        console.log("hi");
-
-        // Set the reference when the refMesh exists
-        useEffect(() => {
-            if (refMesh.current) {
-                store.current.targetObj = refMesh.current;
-            }
-        }, []);}
-
     return (
         <div
-        
-        onClick={() => {
-            setInit(true);
-           
-        }}
+            onClick={() => {
+                setInit(true);
+            }}
         >
-           
             {/* <NavBar/> */}
-           <div style={{ width: "50vw", height: "50vh", position: "relative" }}>
-          
-            <Canvas style={{ position: "absolute", top: 0, left: 0, width:"fit-content", height:"fit-content"}}>
-                <Rig />
-                <directionalLight color="white" position={[200, -100, -500]} intensity={3} />
-                <directionalLight color="white" position={[-30, 100, 30]} intensity={3} />
-                <ambientLight />
-                <Obj />
-            </Canvas>
-            {/* <div style={{ position: "absolute", bottom: 10, right: 10, color: "white" }}>CBX</div> */}
-        </div>
-            
-            
-            
+            <div
+                style={{ width: "50vw", height: "50vh", position: "relative" }}
+            >
+                <Canvas
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "fit-content",
+                        height: "fit-content",
+                    }}
+                >
+                    <Rig />
+                    <directionalLight
+                        color="white"
+                        position={[200, -100, -500]}
+                        intensity={3}
+                    />
+                    <directionalLight
+                        color="white"
+                        position={[-30, 100, 30]}
+                        intensity={3}
+                    />
+                    <ambientLight />
+                    <Obj />
+                </Canvas>
+                {/* <div style={{ position: "absolute", bottom: 10, right: 10, color: "white" }}>CBX</div> */}
+            </div>
         </div>
     );
 };
