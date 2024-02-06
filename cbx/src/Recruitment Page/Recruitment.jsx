@@ -12,11 +12,11 @@ const Recruitment = () => {
         <div className='h-screen w-screen flex flex-col'>
             <NavBar />
             <div id="recruitment" className="flex flex-col justify-center items-center font-bold text-4xl text-white h-full w-full mb-56">
-                <div>
+                <div className="text-7xl text-center">
                     Applications Open Fall 2024
                     {/* application open fall 2024 */}
                     <br />
-                    <span className="text-xl font-bold">
+                    <span className="text-4xl font-bold text-center">
                         {/* Use ScrollLink instead of Link */}
                         <ScrollLink style={{
                             textDecoration: "underline",
@@ -29,7 +29,7 @@ const Recruitment = () => {
                         </ScrollLink>{' '}
                         | Submit Interest
                     </span> <br />
-                    <span style={{fontSize:"15px"}}>
+                    <span className="text-4xl">
                     <ScrollLink style={{
                             textDecoration: "underline",
                             cursor: "pointer",

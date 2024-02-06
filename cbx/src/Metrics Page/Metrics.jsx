@@ -113,9 +113,7 @@ const Metrics = () => {
     }, []);
 
     return (
-        <div
-         className="w-screen h-screen flex flex-row items-center justify-center overflow-hidden relative"
-        >
+        <div className="w-screen h-screen flex flex-row items-center justify-center overflow-hidden relative">
             <div
                 style={{
                     flex: "0 0 100%",
@@ -131,11 +129,19 @@ const Metrics = () => {
                 className="relative z-40"
             >
                 <div className="absolute w-[60vw] mt-[30vh] ml-[10vw] flex flex-col justify-center items-start">
-                    <h1 className="font-light tracking-widest text-5xl mb-4">
+                    {/* <h1 className="font-light tracking-widest text-5xl mb-4">
                         FOUNDED IN 2023
                     </h1>
                     <p className="font-normal text-left">
                         CBX Partners is a private equity <br></br>
+                        firm ran exclusively by Columbia undergraduates.
+                        <br></br>
+                        CBX Partners makes co-investments in buyout<br></br>
+                        transactions alongside partner private investment firms.
+                    </p> */}
+                    <p>
+                        Founded in 2023, CBX Partners is a private equity{" "}
+                        <br></br>
                         firm ran exclusively by Columbia undergraduates.
                         <br></br>
                         CBX Partners makes co-investments in buyout<br></br>
