@@ -41,7 +41,7 @@ function TransitionA() {
                             viewport={{ once: true }}
                             transition={{
                                 duration: 1.7,
-                                delay: 2.7,
+                                delay: 2.2,
                                 ease: "easeInOut",
                             }}
                             variants={{
@@ -74,7 +74,7 @@ function TransitionA() {
                             viewport={{ once: true }}
                             transition={{
                                 duration: 1.7,
-                                delay: 2.7,
+                                delay: 2.2,
                                 ease: "easeInOut",
                             }}
                             variants={{
