@@ -5,9 +5,19 @@ import logoPartners from "./CBX_white_partners.png";
 import background from "./Home_Page_Background.jpg";
 import NavBar from "../Transition-B/Transition-B";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 
 function TransitionA() {
+    const [eat, setMyass] = useState(false);
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setMyass(true);
+        }, 10);
+
+        return () => clearTimeout(timeout);
+    }, []);
+
     return (
         <div>
             <NavBar />
@@ -29,10 +39,14 @@ function TransitionA() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            transition={{ duration: 1.7, delay: 0.7, ease: "easeInOut" }}
+                            transition={{
+                                duration: 1.7,
+                                delay: 0.7,
+                                ease: "easeInOut",
+                            }}
                             variants={{
-                                visible: { x:"5%", y:"-50%", opacity:100 },
-                                hidden: { x:"25%", y:"-100%", opacity:0 },
+                                visible: { x: "5%", y: "-50%", opacity: 100 },
+                                hidden: { x: "25%", y: "-100%", opacity: 0 },
                             }}
                         >
                             <img
@@ -45,7 +59,12 @@ function TransitionA() {
                             className="w-[10%] flex justify-center display-inline"
                             alt="logo"
                         >
-                            <div className="transitionASlash"></div>
+                            <div
+                                className={`absolute h-[5px] w-[25%] 
+                            bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
+                            ${eat? "opacity-100" :"opacity-100"} animate-slice from-50% from-[#B5DEF6]
+                            to-60% to-[#ffffff00] -rotate-[50deg] transition delay-800 duration-[1000ms] ease-in-out`}
+                            ></div>
                         </div>
                         <motion.div
                             className="m-auto flex justify-center w-[64%] "
@@ -53,10 +72,14 @@ function TransitionA() {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            transition={{ duration: 1.7, delay: 0.7, ease: "easeInOut" }}
+                            transition={{
+                                duration: 1.7,
+                                delay: 0.7,
+                                ease: "easeInOut",
+                            }}
                             variants={{
-                                visible: { x:0, y:"50%", opacity:100 },
-                                hidden: { x:"-10%", y:"100%", opacity:0 },
+                                visible: { x: 0, y: "50%", opacity: 100 },
+                                hidden: { x: "-10%", y: "100%", opacity: 0 },
                             }}
                         >
                             <img

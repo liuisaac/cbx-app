@@ -16,6 +16,8 @@
     transition:--a 0.1s 0s;
     animation: transitionASlash;
     -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 1.5s;
+    -webkit-animation-fill-mode: forwards;
     animation-duration: 2s;
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
