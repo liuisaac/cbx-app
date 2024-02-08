@@ -16,8 +16,8 @@ export const navLinks = [
     title: "Partners",
   },
   {
-    id: "alumni",
-    title: "Alumni",
+    id: "insights",
+    title: "Insights",
   },
   {
     id: "recruiting",

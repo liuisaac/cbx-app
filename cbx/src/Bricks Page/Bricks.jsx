@@ -123,7 +123,7 @@ const Bricks = forwardRef((props, ref) => {
     }, [setupViewer]);
 
     return (
-        <div id="brick" style={{ width: "100vw", height: "100vh", position: "relative" }}>
+        <div id="brick" className="bg-black w-screen h-full relative">
       
             <div style={{ display: "flex" }}>
                 

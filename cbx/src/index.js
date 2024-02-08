@@ -30,8 +30,8 @@ export const navLinks = [
     title: "Partner Firms",
   },
   {
-    id: "alumni",
-    title: "Alumni",
+    id: "insights",
+    title: "Insights",
   },
   {
     id: "recruiting",

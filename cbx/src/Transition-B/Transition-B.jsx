@@ -39,7 +39,7 @@ const NavBar = () => {
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.7, ease: "easeInOut"}}
             className="z-50 bg-black w-full flex justify-between items-center navbar fixed top-0">
-                <div className="overflow-hidden mt-4 flex justify-start font-poppins my-auto">
+                <div className="overflow-hidden pt-4 flex justify-start font-poppins my-auto h-20">
                     <Link
                         className={`transition duration-[2000ms] ${
                             transition
@@ -50,7 +50,7 @@ const NavBar = () => {
                     >
                         {" "}
                         <img
-                            className="object-contain h-16 ml-10"
+                            className="object-contain h-full mt-1 ml-10"
                             src={logo}
                             alt="CBX Partners Logo"
                         />{" "}
