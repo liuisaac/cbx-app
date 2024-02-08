@@ -13,7 +13,7 @@ function TransitionA() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setMyass(true);
-        }, 10);
+        }, 1000);
 
         return () => clearTimeout(timeout);
     }, []);
@@ -41,7 +41,7 @@ function TransitionA() {
                             viewport={{ once: true }}
                             transition={{
                                 duration: 1.7,
-                                delay: 0.7,
+                                delay: 2.7,
                                 ease: "easeInOut",
                             }}
                             variants={{
@@ -62,8 +62,8 @@ function TransitionA() {
                             <div
                                 className={`absolute h-[5px] w-[25%] 
                             bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
-                            ${eat? "opacity-100" :"opacity-100"} animate-slice from-50% from-[#B5DEF6]
-                            to-60% to-[#ffffff00] -rotate-[50deg] transition delay-800 duration-[1000ms] ease-in-out`}
+                            ${eat? "opacity-100 animate-slice" :"opacity-0"}  from-50% from-[#B5DEF6]
+                            to-60% to-[#ffffff00] -rotate-[50deg]`}
                             ></div>
                         </div>
                         <motion.div
@@ -74,7 +74,7 @@ function TransitionA() {
                             viewport={{ once: true }}
                             transition={{
                                 duration: 1.7,
-                                delay: 0.7,
+                                delay: 2.7,
                                 ease: "easeInOut",
                             }}
                             variants={{

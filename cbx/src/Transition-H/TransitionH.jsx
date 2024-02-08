@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -92,29 +92,31 @@ const TransitionH = () => {
             <div
                 style={{ width: "50vw", height: "50vh", position: "relative" }}
             >
-                <Canvas
-                    style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "fit-content",
-                        height: "fit-content",
-                    }}
-                >
-                    <Rig />
-                    <directionalLight
-                        color="white"
-                        position={[200, -100, -500]}
-                        intensity={3}
-                    />
-                    <directionalLight
-                        color="white"
-                        position={[-30, 100, 30]}
-                        intensity={3}
-                    />
-                    <ambientLight />
-                    <Obj />
-                </Canvas>
+                <Suspense fallback={<div>Loading</div>}>
+                    <Canvas
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "fit-content",
+                            height: "fit-content",
+                        }}
+                    >
+                        <Rig />
+                        <directionalLight
+                            color="white"
+                            position={[200, -100, -500]}
+                            intensity={3}
+                        />
+                        <directionalLight
+                            color="white"
+                            position={[-30, 100, 30]}
+                            intensity={3}
+                        />
+                        <ambientLight />
+                        <Obj />
+                    </Canvas>
+                </Suspense>
                 {/* <div style={{ position: "absolute", bottom: 10, right: 10, color: "white" }}>CBX</div> */}
             </div>
         </div>
