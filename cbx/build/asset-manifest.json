@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.51757ee3.css",
+    "main.js": "/static/js/main.0b70902a.js",
+    "static/js/592.3c151d2c.chunk.js": "/static/js/592.3c151d2c.chunk.js",
+    "static/media/Home_Page_Background.jpg": "/static/media/Home_Page_Background.b409d922fb8f3129cf39.jpg",
+    "static/media/LP_Login.jpeg": "/static/media/LP_Login.41b1d0957357e8c2a359.jpeg",
+    "static/media/final-logos.png": "/static/media/final-logos.3f619dbf437798863a43.png",
+    "static/media/ppneuemontreal-semibolditalic-webfont.woff": "/static/media/ppneuemontreal-semibolditalic-webfont.c590454d7ed8e552acf3.woff",
+    "static/media/ppneuemontreal-italic-webfont.woff": "/static/media/ppneuemontreal-italic-webfont.140ecd7e403efa745567.woff",
+    "static/media/ppneuemontreal-medium-webfont.woff": "/static/media/ppneuemontreal-medium-webfont.da4c9790ab95afa0b3bb.woff",
+    "static/media/ppneuemontreal-book-webfont.woff": "/static/media/ppneuemontreal-book-webfont.4c423d33fa8405b8e217.woff",
+    "static/media/ppneuemontreal-bold-webfont.woff": "/static/media/ppneuemontreal-bold-webfont.682d0d74d35bbb231600.woff",
+    "static/media/ppneuemontreal-thin-webfont.woff": "/static/media/ppneuemontreal-thin-webfont.ccb3ce7e0253cf6ab128.woff",
+    "static/media/ppneuemontreal-semibolditalic-webfont.woff2": "/static/media/ppneuemontreal-semibolditalic-webfont.d39cb0d0feef7509f9ff.woff2",
+    "static/media/ppneuemontreal-italic-webfont.woff2": "/static/media/ppneuemontreal-italic-webfont.5245dae8ebbf2b7c819c.woff2",
+    "static/media/ppneuemontreal-medium-webfont.woff2": "/static/media/ppneuemontreal-medium-webfont.bca35172017cb1b8909f.woff2",
+    "static/media/ppneuemontreal-book-webfont.woff2": "/static/media/ppneuemontreal-book-webfont.614234087c391f607c7e.woff2",
+    "static/media/ppneuemontreal-bold-webfont.woff2": "/static/media/ppneuemontreal-bold-webfont.bd60c888206b4a595825.woff2",
+    "static/media/ppneuemontreal-thin-webfont.woff2": "/static/media/ppneuemontreal-thin-webfont.d6b73b6e3ebd3ad25ed3.woff2",
+    "static/media/CBX_white_partners.png": "/static/media/CBX_white_partners.eedd52b70f1ea7bcd601.png",
+    "static/media/256px-Man_Silhouette2.jpg": "/static/media/256px-Man_Silhouette2.7589f146019fc3d03c4d.jpg",
+    "static/media/CBX_white_cbx.png": "/static/media/CBX_white_cbx.05ac1b34d871c8f0dc87.png",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.51757ee3.css.map": "/static/css/main.51757ee3.css.map",
+    "main.0b70902a.js.map": "/static/js/main.0b70902a.js.map",
+    "592.3c151d2c.chunk.js.map": "/static/js/592.3c151d2c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51757ee3.css",
+    "static/js/main.0b70902a.js"
+  ]
+}
