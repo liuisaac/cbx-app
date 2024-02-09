@@ -13,7 +13,7 @@ function TransitionA() {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setMyass(true);
-        }, 1000);
+        }, 800);
 
         return () => clearTimeout(timeout);
     }, []);

@@ -14,10 +14,6 @@ import Transition_h from "./Transition-H/TransitionH";
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
-  },
-  {
     id: "investment-team",
     title: "Investment Team",
   },
