@@ -10,7 +10,7 @@ import TransitionD from "./Transition-D&E/TransitionD.jsx";
 // import TransitionF from "./Transition-F/Transition-F.tsx";
 import TransitionG from "./Transition-G/Transition-G.jsx";
 import Metrics from "./Metrics Page/Metrics.jsx";
-import Bricks from "./Bricks Page/Bricks.jsx";
+import Organizer from "./Bricks Page/Organizer.jsx";
 import { Route, Routes, Router } from "react-router-dom";
 import RecruitmentForm from "./Recruitment Page/RecruitForm.jsx";
 import Companies from "./Transition-D&E/TransitionD.jsx";
@@ -38,7 +38,7 @@ function App() {
                                 {/* Render components for the '/' route */}
                                 <TransitionA />
                                 <Metrics />
-                                <Bricks />
+                                <Organizer />
                                 <Recruitment />
                                 <RecruitmentForm />
                                 <Footer />
