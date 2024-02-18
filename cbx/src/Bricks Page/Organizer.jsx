@@ -65,7 +65,7 @@ function Organizer() {
 
     return (
         <div className="w-screen h-[120vh] bg-black relative overflow-hidden flex flex-col items-center justify-center">
-            <div className="text-white h-screen w-screen absolute z-10 flex flex-col items-center justify-center">
+            <div className="text-white h-screen w-screen absolute z-10 flex-col items-center justify-center sm:flex hidden">
                 <div className="w-1/3 ml-[40vw] text-xl">
                     <h1 className="font-bold mb-4 text-2xl">
                         Built from the ground up to be different.
@@ -85,7 +85,29 @@ function Organizer() {
                 </div>
             </div>
 
-            <Canvas className="pointer-events-none absolute top-0 left-0 w-screen h-screen mr-[40vw]">
+            <div className="text-white h-[80vh] w-screen absolute z-10 flex flex-col items-center justify-center sm:hidden">
+                <div className="w-full text-xl">
+                    <h1 className="font-bold mb-4 text-4xl text-center">
+                        Built from the ground up to be different.
+                    </h1>
+                    <p className="my-24 px-4 text-xl">
+                        CBX Partners&apos; ethos is two-fold: deliver top
+                        quartile alpha for its investors and provide select
+                        Columbia undergraduates with the investing intuition and
+                        competitive edge needed to dominate careers at the
+                        world’s leading investment and strategic advisory firms.
+                        <br />
+                        <br />
+                        <p className="font-bold text-center mt-8">
+                            We’re not a club. We don’t exist for resume padding.
+                            We’re a place where people who are not cut from the
+                            average cloth can go to build momentum.
+                        </p>
+                    </p>
+                </div>
+            </div>
+
+            <Canvas className="pointer-events-none absolute top-0 left-0 w-full h-screen sm:mr-[40vw] sm:scale-100 sm:opacity-100 opacity-20">
                 <directionalLight position={[100, 0, 0]} intensity={2} />
                 <directionalLight position={[0, 100, 0]} intensity={5} />
                 <directionalLight position={[0, 0, 100]} intensity={0.1} />
@@ -170,21 +192,15 @@ function Organizer() {
                         init={Init}
                     />
                     <Brick
-                        evec={[-pointDist, -pointDist, 0]}
+                        evec={[-pointDist, pointDist, -pointDist]}
                         dist={startDist}
                         delay={0.85}
                         init={Init}
                     />
                     <Brick
-                        evec={[-pointDist, pointDist, -pointDist]}
-                        dist={startDist}
-                        delay={0.9}
-                        init={Init}
-                    />
-                    <Brick
                         evec={[-pointDist, -pointDist, -pointDist]}
                         dist={startDist}
-                        delay={0.95}
+                        delay={0.9}
                         init={Init}
                     />
                     <Brick
@@ -239,12 +255,6 @@ function Organizer() {
                         evec={[0, pointDist, pointDist]}
                         dist={startDist}
                         delay={1.4}
-                        init={Init}
-                    />
-                    <Brick
-                        evec={[0, -pointDist, 0]}
-                        dist={startDist}
-                        delay={1.45}
                         init={Init}
                     />
                     <Brick

@@ -50,7 +50,7 @@ const NavBar = () => {
                     >
                         {" "}
                         <img
-                            className="object-contain h-full mt-1 ml-10"
+                            className="object-contain h-full"
                             src={logo}
                             alt="CBX Partners Logo"
                         />{" "}

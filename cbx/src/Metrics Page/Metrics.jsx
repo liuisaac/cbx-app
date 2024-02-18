@@ -115,20 +115,9 @@ const Metrics = () => {
     return (
         <div className="w-screen h-screen flex flex-row items-center justify-center overflow-hidden relative">
             <div
-                style={{
-                    flex: "0 0 100%",
-                    height: "50vw",
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: "1.5rem",
-                    marginBottom: "1rem",
-                    marginTop: "11rem",
-                    textAlign: "center",
-                    marginLeft: "5rem",
-                }}
-                className="relative z-40"
+                className="relative h-[50vw] z-40 flex w-screen mb-4 sm:mt-44 mt-20 sm:ml-20"
             >
-                <div className="absolute w-[50vw] mt-[30vh] ml-[10vw] flex flex-col justify-center items-start">
+                <div className="absolute sm:w-[50vw] w-[100vw] sm:h-1/2 h-full sm:mt-[30vh] ml-0 flex flex-col sm:justify-start justify-center sm:items-start items-center font-bold text-white text-center text-2xl ">
                     {/* <h1 className="font-light tracking-widest text-5xl mb-4">
                         FOUNDED IN 2023
                     </h1>
@@ -139,7 +128,7 @@ const Metrics = () => {
                         CBX Partners makes co-investments in buyout<br></br>
                         transactions alongside partner private investment firms.
                     </p> */}
-                    <p className="w-3/4">
+                    <p className="sm:w-3/4 w-full sm:rounded-none rounded-md bg-opacity-60 sm:p-0 p-4">
                         Founded in 2023, CBX Partners is a private equity{" "}
                         <br></br>
                         firm ran exclusively by Columbia undergraduates.
@@ -151,18 +140,10 @@ const Metrics = () => {
             </div>
 
             <div
-                style={{
-                    width: "100%",
-                }}
-                className="absolute w-screen h-screen"
+                className="absolute w-screen h-screen md:ml-[15vw] ml-[0vw]"
             >
                 <Canvas
-                    style={{
-                        top: 0,
-                        left: 0,
-                        marginTop: "10vh",
-                        marginLeft: "15vw",
-                    }}
+                    className="mt-[10vh] top-0 left-0 w-full sm:opacity-100 opacity-40"
                 >
                     <Rig />
                     <directionalLight

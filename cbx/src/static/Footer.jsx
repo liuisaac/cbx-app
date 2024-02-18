@@ -49,7 +49,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="mt-8 p-8 static bottom-0 bg-black text-white">
+        <footer className="mt-8 p-8 static bottom-0 bg-black text-white w-screen overflow-hidden">
             <CookieNotice onAccept={handleCookieAccept} acceptedState={showCookieNotice}/>
             <div className="grid grid-cols-9 gap-4">
                 <div className="col-start-1 col-3 w-64">

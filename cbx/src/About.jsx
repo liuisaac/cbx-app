@@ -139,13 +139,7 @@ export default function About() {
                 }}
             >
                 <Canvas
-                    style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        marginTop: "20vh",
-                        marginLeft: "35vh",
-                    }}
+                    className="absolute top-0 left-0 mt-[20vh] ml-[0vh]"
                 >
                     <Rig />
                     <directionalLight
