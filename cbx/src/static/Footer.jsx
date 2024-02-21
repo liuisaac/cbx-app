@@ -25,7 +25,7 @@ const CookieNotice = ({ onAccept, acceptedState }) => {
                 visible: { y:0 },
                 hidden: { y:"100%" },
             }}
-            className="fixed bottom-0 left-0 right-0 bg-black text-white p-2 text-center z-50"
+            className="fixed bottom-0 left-0 right-0 bg-black text-white p-2 text-center z-30"
         >
             <p>
                 This website uses cookies. By continuing to use this site, you

@@ -71,8 +71,7 @@ function Organizer() {
                         Built from the ground up to be different.
                     </h1>
                     <p>
-                        CBX Partners&apos; ethos is two-fold: deliver top
-                        quartile alpha for its investors and provide select
+                        CBX Partners&apos; ethos is two-fold: deliver alpha for its investors and provide select
                         Columbia undergraduates with the investing intuition and
                         competitive edge needed to dominate careers at the
                         world’s leading investment and strategic advisory firms.
@@ -91,8 +90,7 @@ function Organizer() {
                         Built from the ground up to be different.
                     </h1>
                     <p className="my-24 px-4 text-xl">
-                        CBX Partners&apos; ethos is two-fold: deliver top
-                        quartile alpha for its investors and provide select
+                        CBX Partners&apos; ethos is two-fold: deliver alpha for its investors and provide select
                         Columbia undergraduates with the investing intuition and
                         competitive edge needed to dominate careers at the
                         world’s leading investment and strategic advisory firms.

@@ -130,10 +130,8 @@ const Metrics = () => {
                     </p> */}
                     <p className="sm:w-3/4 w-full sm:rounded-none rounded-md bg-opacity-60 sm:p-0 p-4">
                         Founded in 2023, CBX Partners is a private equity{" "}
-                        <br></br>
-                        firm ran exclusively by Columbia undergraduates.
-                        <br></br>
-                        CBX Partners makes co-investments in buyout<br></br>
+                        firm ran exclusively by Columbia undergraduates. 
+                        CBX Partners makes co-investments in buyout
                         transactions alongside partner private investment firms.
                     </p>
                 </div>

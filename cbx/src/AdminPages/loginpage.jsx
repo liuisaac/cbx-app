@@ -110,7 +110,7 @@ const LoginPage = () => {
             {" "}
             <NavBar />
             <div className="w-screen h-screen flex flex-row justify-center items-center">
-                <div className="login-container w-[40vw]">
+                <div className="login-container sm:w-[40vw] w-[80vw]">
                     <div className="input-group">
                         <label>Email:</label>
                         <input
