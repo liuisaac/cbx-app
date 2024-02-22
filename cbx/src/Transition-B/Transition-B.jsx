@@ -135,7 +135,7 @@ const NavBar = () => {
                         />{" "}
                     </Link>
                 </div>
-                {/* <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-5">
+                <ul className="list-none sm:flex hidden justify-end items-center flex-1 mr-5">
                     {navLinks.map((nav, index) => (
                         <li
                             key={nav.id}
@@ -153,7 +153,7 @@ const NavBar = () => {
                             </Link>
                         </li>
                     ))}
-                </ul> */}
+                </ul>
             </motion.nav>
         </>
     );
