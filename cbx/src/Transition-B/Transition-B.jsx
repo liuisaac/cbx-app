@@ -80,7 +80,7 @@ const NavBar = () => {
             </nav>
             <div
                 className={`fixed top-0 left-0 w-screen h-screen bg-[#161616] z-40 ${
-                    menu ? "bg-opacity-70 backdrop-blur-sm" : "bg-opacity-0"
+                    menu ? "bg-opacity-70 backdrop-blur-sm pointer pointer-events-auto" : "bg-opacity-0 pointer-events-none"
                 } transition duration-700 ease-in-out`}
             >
                 <ul className="list-none flex flex-col justify-end items-left ml-5 mt-32 gap-10">
